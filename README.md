@@ -32,7 +32,9 @@ Connecting takes a few seconds and needs no app on the phone. Open OpenCamera on
 
 
 <p align="center">
-<img src="https://www.shieldcn.dev/badge/Ko--fi-sponsor-FF5E5B.svg?logo=kofi&variant=ghost&font=inter&labelTextColor=m" alt="Ko-fi">
+<a href="https://ko-fi.com/panonim" target="_blank" rel="noopener noreferrer">
+  <img src="https://www.shieldcn.dev/badge/Ko--fi-sponsor-FF5E5B.svg?logo=kofi&variant=ghost&font=inter&labelTextColor=m" alt="Ko-fi">
+</a>
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/last-commit/panonim/opencamera.svg?variant=secondary&amp;mode=dark"><img alt="Last commit" src="https://www.shieldcn.dev/github/last-commit/panonim/opencamera.svg?variant=secondary&amp;mode=light"></picture>
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/commits/panonim/opencamera.svg?variant=secondary&amp;mode=dark"><img alt="Commits" src="https://www.shieldcn.dev/github/commits/panonim/opencamera.svg?variant=secondary&amp;mode=light"></picture><br>
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/closed-issues/panonim/opencamera.svg?variant=secondary&amp;mode=dark"><img alt="Closed issues" src="https://www.shieldcn.dev/github/closed-issues/panonim/opencamera.svg?variant=secondary&amp;mode=light"></picture>
