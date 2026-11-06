@@ -36,6 +36,10 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 26
+
       - uses: oven-sh/setup-bun@v2
 
       - uses: dtolnay/rust-toolchain@stable
@@ -55,7 +59,7 @@ jobs:
           sudo apt-get install -y build-essential file libwebkit2gtk-4.1-dev libxdo-dev libssl-dev \
             libayatana-appindicator3-dev librsvg2-dev patchelf
 
-      - run: bun install
+      - run: bun install --frozen-lockfile
       - run: bun run build:mobile
       - run: bun run build:desktop
 
