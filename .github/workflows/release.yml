@@ -1,0 +1,121 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build (${{ matrix.name }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: windows
+            os: windows-latest
+            rust-targets: x86_64-pc-windows-msvc,i686-pc-windows-msvc
+            tauri-args: --bundles nsis
+            assets: target/release/OpenCamera.exe target/release/bundle/nsis/*.exe target/release/bundle/nsis/*.exe.sig
+          - name: linux
+            os: ubuntu-22.04
+            rust-targets: ""
+            tauri-args: --bundles deb,appimage
+            assets: target/release/bundle/deb/*.deb target/release/bundle/appimage/*.AppImage target/release/bundle/appimage/*.AppImage.sig
+          - name: macos
+            os: macos-latest
+            rust-targets: aarch64-apple-darwin,x86_64-apple-darwin
+            tauri-args: --target universal-apple-darwin --bundles dmg,app
+            assets: target/universal-apple-darwin/release/bundle/dmg/*.dmg target/universal-apple-darwin/release/bundle/macos/*.app.tar.gz target/universal-apple-darwin/release/bundle/macos/*.app.tar.gz.sig
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: oven-sh/setup-bun@v2
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.rust-targets }}
+
+      # Restores caches saved by the Test workflow, since tag runs can't share caches with later tags.
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: ${{ matrix.name }}
+          save-if: false
+
+      - name: Install Linux dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential file libwebkit2gtk-4.1-dev libxdo-dev libssl-dev \
+            libayatana-appindicator3-dev librsvg2-dev patchelf
+
+      - run: bun install
+      - run: bun run build:mobile
+      - run: bun run build:desktop
+
+      # Builds the 64-bit and 32-bit camera DLLs so they run inside other apps without extra installs.
+      - name: Build virtual camera DLLs
+        if: runner.os == 'Windows'
+        env:
+          RUSTFLAGS: -C target-feature=+crt-static
+        run: |
+          for target in x86_64-pc-windows-msvc i686-pc-windows-msvc; do
+            cargo build --release -p opencamera-vcam-win-source --target "$target" --target-dir target/dll
+          done
+          mkdir -p apps/desktop/src-tauri/resources
+          cp target/dll/x86_64-pc-windows-msvc/release/opencamera_vcam.dll apps/desktop/src-tauri/resources/
+          cp target/dll/i686-pc-windows-msvc/release/opencamera_vcam.dll apps/desktop/src-tauri/resources/opencamera_vcam32.dll
+
+      - name: Build app
+        working-directory: apps/desktop
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+          TAG: ${{ github.event.release.tag_name }}
+        # The updater only offers builds whose version is newer, so the app version follows the release tag.
+        run: bunx tauri build --config "{\"version\":\"${TAG#v}\"}" ${{ matrix.tauri-args }}
+
+      - name: Attach to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+          ASSETS: ${{ matrix.assets }}
+          PLATFORM: ${{ matrix.name }}
+        run: |
+          # Uploads under version-less names so the README links and updater URLs never change.
+          for f in $ASSETS; do
+            ext=$(echo "$f" | grep -oE '(app\.tar\.gz|exe|deb|AppImage|dmg)(\.sig)?$')
+            name="OpenCamera-$PLATFORM.$ext"
+            if [ "$f" = target/release/OpenCamera.exe ]; then name=OpenCamera-windows-portable.exe; fi
+            cp "$f" "$name"
+            gh release upload "$TAG" "$name" --clobber
+          done
+
+  updater:
+    name: Publish update manifest
+    needs: build
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Build latest.json
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh release download "$TAG" --repo "$REPO" --pattern '*.sig'
+          url() { echo "https://github.com/$REPO/releases/download/$TAG/$1"; }
+          entry() { jq -n --arg s "$(cat "$2")" --arg u "$(url "$1")" '{signature: $s, url: $u}'; }
+          jq -n \
+            --arg version "${TAG#v}" \
+            --arg date "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --argjson win "$(entry OpenCamera-windows.exe OpenCamera-windows.exe.sig)" \
+            --argjson linux "$(entry OpenCamera-linux.AppImage OpenCamera-linux.AppImage.sig)" \
+            --argjson mac "$(entry OpenCamera-macos.app.tar.gz OpenCamera-macos.app.tar.gz.sig)" \
+            '{version: $version, pub_date: $date, platforms: {"windows-x86_64": $win, "linux-x86_64": $linux, "darwin-x86_64": $mac, "darwin-aarch64": $mac}}' > latest.json
+          gh release upload "$TAG" latest.json --repo "$REPO" --clobber

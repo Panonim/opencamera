@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/inter";
+@import "@opencamera/ui/theme.css";
+
+html,
+body,
+#root {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.pt-safe {
+  padding-top: max(env(safe-area-inset-top), 12px);
+}
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom), 16px);
+}
+.px-safe {
+  padding-left: max(env(safe-area-inset-left), 16px);
+  padding-right: max(env(safe-area-inset-right), 16px);
+}

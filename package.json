@@ -1,0 +1,21 @@
+{
+  "name": "opencamera",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/*",
+    "apps/mobile",
+    "apps/desktop",
+    "e2e"
+  ],
+  "scripts": {
+    "build:mobile": "npm run build -w @opencamera/mobile",
+    "build:desktop": "npm run build -w @opencamera/desktop",
+    "test": "npm run test -w @opencamera/protocol -w @opencamera/i18n -w @opencamera/desktop",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vitest": "^5.0.5"
+  }
+}

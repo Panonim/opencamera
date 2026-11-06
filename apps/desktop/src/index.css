@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/inter";
+@import "@opencamera/ui/theme.css";
+
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+input,
+textarea {
+  user-select: text;
+}
+
+/* Hides scrollbars but still lets you scroll. */
+* {
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+[role="switch"]:not(:disabled),
+[role="combobox"]:not(:disabled),
+[role="option"]:not([data-disabled]),
+[role="slider"],
+a[href] {
+  cursor: pointer;
+}

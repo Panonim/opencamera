@@ -1,0 +1,12 @@
+{
+  "name": "@opencamera/ui",
+  "private": true,
+  "version": "0.1.0",
+  "files": ["theme.css", "Logo.tsx", "brand"],
+  "peerDependencies": {
+    "react": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0"
+  }
+}

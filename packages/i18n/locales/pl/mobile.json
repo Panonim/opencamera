@@ -1,0 +1,128 @@
+{
+  "intro": {
+    "title": "Użyj tego telefonu jako kamery internetowej",
+    "titleNamed": "Połącz z {{name}}",
+    "body": "Kamera przesyła obraz bezpośrednio do komputera przez sieć lokalną. Nic nie jest nagrywane ani wysyłane.",
+    "start": "Uruchom kamerę",
+    "starting": "Uruchamianie kamery…",
+    "permissionNote": "Dostęp do kamery zostanie poproszony dopiero po dotknięciu przycisku Start.",
+    "warningNote": "Ostrzeżenie o zabezpieczeniach przed tą stroną jest normalne. Połączenie jest szyfrowane."
+  },
+  "live": {
+    "connecting": "Łączenie…",
+    "connected": "Połączono",
+    "connectedTo": "Połączono z {{name}}",
+    "reconnecting": "Ponowne łączenie…",
+    "warning": {
+      "hot": "Telefon się przegrzewa",
+      "cpu": "Telefon nie nadąża",
+      "bandwidth": "Słaby sygnał Wi-Fi"
+    },
+    "videoPaused": "Wideo wstrzymane",
+    "actual": "{{width}}×{{height}} · {{fps}} kl./s",
+    "batterySaver": "Oszczędzanie baterii · {{fps}} kl./s",
+    "fullscreen": "Pełny ekran",
+    "exitFullscreen": "Zamknij pełny ekran",
+    "disconnect": "Rozłącz",
+    "dismiss": "Zamknij",
+    "pausedTitle": "Kamera została wstrzymana",
+    "pausedBody": "Podczas przesyłania obrazu pozostaw tę stronę otwartą i włączony ekran.",
+    "rotationTitle": "Włącz blokadę obrotu",
+    "rotationBody": "Obrócenie telefonu przełącza wideo na komputerze między orientacją pionową i poziomą.",
+    "settings": "Ustawienia kamery",
+    "pause": "Wstrzymaj wideo",
+    "resume": "Wznów wideo",
+    "switchCamera": "Przełącz kamerę"
+  },
+  "settings": {
+    "title": "Ustawienia kamery",
+    "close": "Zamknij",
+    "camera": "Kamera",
+    "resolution": "Rozdzielczość",
+    "frameRate": "Klatki na sekundę",
+    "fps": "{{fps}} kl./s",
+    "quality": "Jakość",
+    "qualityPreset": {
+      "low-latency": "Niskie opóźnienie",
+      "balanced": "Zrównoważona",
+      "high-quality": "Wysoka jakość"
+    },
+    "bitrate": "Przepływność",
+    "auto": "Automatycznie",
+    "manual": "Ręcznie",
+    "mbps": "{{value}} Mb/s",
+    "batterySaver": "Oszczędzanie baterii",
+    "on": "Wł.",
+    "off": "Wył.",
+    "note": "Opcje nieobsługiwane przez kamerę lub przeglądarkę są wyłączone. Komputer również może zmienić te ustawienia."
+  },
+  "message": {
+    "actions": {
+      "tryAgain": "Spróbuj ponownie",
+      "reload": "Odśwież",
+      "useThisTab": "Użyj tej karty",
+      "reconnect": "Połącz ponownie"
+    },
+    "no_pairing": {
+      "title": "Zeskanuj kod QR",
+      "body": "Otwórz OpenCamera na komputerze, wybierz „Połącz urządzenie” i zeskanuj kod QR aparatem."
+    },
+    "permission_denied": {
+      "title": "Dostęp do kamery jest zablokowany",
+      "body": "Dotknij ikony obok paska adresu, otwórz Uprawnienia i zezwól na dostęp do kamery, a następnie spróbuj ponownie.",
+      "bodyIos": "Otwórz Ustawienia › Safari › Kamera, wybierz Zezwól i spróbuj ponownie."
+    },
+    "no_camera": {
+      "title": "Nie znaleziono kamery",
+      "body": "Ta przeglądarka nie znalazła dostępnej kamery."
+    },
+    "camera_busy": {
+      "title": "Kamera jest używana",
+      "body": "Inna aplikacja korzysta z kamery. Zamknij ją i spróbuj ponownie."
+    },
+    "unsupported": {
+      "title": "Przeglądarka nie jest obsługiwana",
+      "body": "Użyj Safari na iPhonie albo Chrome lub Firefox na Androidzie i otwórz link https z kodu QR."
+    },
+    "unknown": {
+      "title": "Coś poszło nie tak",
+      "body": "Nie udało się uruchomić kamery."
+    },
+    "invalid_token": {
+      "title": "Ten kod QR jest już nieważny",
+      "body": "Każdy kod działa tylko raz i wygasa po 5 minutach. Zeskanuj nowy kod wyświetlony na komputerze."
+    },
+    "expired_token": {
+      "title": "Ten kod QR wygasł",
+      "body": "Każdy kod działa tylko raz i wygasa po 5 minutach. Zeskanuj nowy kod wyświetlony na komputerze."
+    },
+    "unknown_device": {
+      "title": "Ten telefon został usunięty",
+      "body": "Telefon usunięto z OpenCamera na komputerze. Zeskanuj nowy kod QR, aby ponownie sparować urządzenia."
+    },
+    "busy": {
+      "title": "Połączono inny telefon",
+      "body": "Rozłącz drugi telefon w OpenCamera na komputerze, a następnie spróbuj ponownie."
+    },
+    "version_mismatch": {
+      "title": "Wymagana aktualizacja",
+      "body": "Ta strona jest nieaktualna. Odśwież ją, aby pobrać wersję zgodną z komputerem."
+    },
+    "replaced": {
+      "title": "Otwarto w innym miejscu",
+      "body": "OpenCamera przesyła teraz obraz z innej karty lub okna."
+    },
+    "desktop_disconnect": {
+      "title": "Rozłączono",
+      "body": "Komputer zakończył połączenie."
+    },
+    "user_disconnect": {
+      "title": "Rozłączono",
+      "body": "Kamera jest wyłączona."
+    },
+    "unreachable": {
+      "title": "Nie można połączyć się z komputerem",
+      "body": "Upewnij się, że OpenCamera jest uruchomiona na komputerze i oba urządzenia korzystają z tej samej sieci Wi-Fi."
+    }
+  }
+}

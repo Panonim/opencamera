@@ -1,0 +1,51 @@
+name: Test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test (${{ matrix.name }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: windows
+            os: windows-latest
+          - name: linux
+            os: ubuntu-22.04
+          - name: macos
+            os: macos-latest
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 26
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      # Same key as release.yml so releases restore the crates cached here.
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: ${{ matrix.name }}
+
+      - name: Install Linux dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential file libwebkit2gtk-4.1-dev libxdo-dev libssl-dev \
+            libayatana-appindicator3-dev librsvg2-dev patchelf
+
+      - run: npm ci
+      - run: npm test
+      - run: npm run build:mobile
+      - run: cargo test --workspace --exclude opencamera-desktop

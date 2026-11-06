@@ -1,0 +1,128 @@
+{
+  "intro": {
+    "title": "Utilisez ce téléphone comme webcam",
+    "titleNamed": "Connexion à {{name}}",
+    "body": "Votre caméra diffuse directement vers votre ordinateur via votre réseau local. Rien n'est enregistré ni envoyé.",
+    "permissionNote": "L'accès à la caméra n'est demandé qu'après avoir appuyé sur Démarrer.",
+    "warningNote": "L'avertissement de sécurité affiché avant cette page est normal. Le lien reste chiffré.",
+    "start": "Démarrer la caméra",
+    "starting": "Démarrage de la caméra…"
+  },
+  "live": {
+    "connecting": "Connexion…",
+    "connected": "Connecté",
+    "connectedTo": "Connecté à {{name}}",
+    "reconnecting": "Reconnexion…",
+    "warning": {
+      "hot": "Le téléphone chauffe",
+      "cpu": "Le téléphone n'arrive pas à suivre",
+      "bandwidth": "Signal Wi-Fi faible"
+    },
+    "videoPaused": "Vidéo en pause",
+    "actual": "{{width}}×{{height}} · {{fps}} i/s",
+    "batterySaver": "Économiseur de batterie · {{fps}} i/s",
+    "fullscreen": "Plein écran",
+    "exitFullscreen": "Quitter le plein écran",
+    "disconnect": "Déconnecter",
+    "dismiss": "Ignorer",
+    "pausedTitle": "La caméra a été mise en pause",
+    "pausedBody": "Gardez cette page ouverte et l'écran allumé pendant la diffusion.",
+    "rotationTitle": "Activez le verrouillage de la rotation",
+    "rotationBody": "Faire pivoter votre téléphone bascule la vidéo de votre ordinateur entre portrait et paysage.",
+    "settings": "Paramètres de la caméra",
+    "pause": "Mettre la vidéo en pause",
+    "resume": "Reprendre la vidéo",
+    "switchCamera": "Changer de caméra"
+  },
+  "settings": {
+    "title": "Paramètres de la caméra",
+    "close": "Fermer",
+    "camera": "Caméra",
+    "resolution": "Résolution",
+    "frameRate": "Fréquence d'images",
+    "fps": "{{fps}} i/s",
+    "quality": "Qualité",
+    "qualityPreset": {
+      "low-latency": "Faible latence",
+      "balanced": "Équilibrée",
+      "high-quality": "Haute qualité"
+    },
+    "bitrate": "Débit",
+    "auto": "Auto",
+    "manual": "Manuel",
+    "mbps": "{{value}} Mb/s",
+    "batterySaver": "Économiseur de batterie",
+    "on": "Activé",
+    "off": "Désactivé",
+    "note": "Les options que votre caméra ou votre navigateur ne prend pas en charge sont désactivées. Votre ordinateur peut aussi modifier ces paramètres."
+  },
+  "message": {
+    "actions": {
+      "tryAgain": "Réessayer",
+      "reload": "Recharger",
+      "useThisTab": "Utiliser cet onglet",
+      "reconnect": "Se reconnecter"
+    },
+    "no_pairing": {
+      "title": "Scannez le code QR",
+      "body": "Ouvrez OpenCamera sur votre ordinateur, choisissez « Connecter un appareil » et scannez le code QR avec l'appareil photo."
+    },
+    "permission_denied": {
+      "title": "L'accès à la caméra est bloqué",
+      "body": "Appuyez sur l'icône à côté de la barre d'adresse, ouvrez Autorisations et autorisez la caméra, puis réessayez.",
+      "bodyIos": "Ouvrez Réglages › Safari › Caméra et choisissez Autoriser, puis revenez et réessayez."
+    },
+    "no_camera": {
+      "title": "Aucune caméra trouvée",
+      "body": "Ce navigateur n'a trouvé aucune caméra utilisable."
+    },
+    "camera_busy": {
+      "title": "La caméra est utilisée",
+      "body": "Une autre application utilise la caméra. Fermez-la et réessayez."
+    },
+    "unsupported": {
+      "title": "Navigateur non pris en charge",
+      "body": "Utilisez Safari sur iPhone, ou Chrome ou Firefox sur Android, et ouvrez le lien https du code QR."
+    },
+    "unknown": {
+      "title": "Une erreur s'est produite",
+      "body": "Impossible de démarrer la caméra."
+    },
+    "invalid_token": {
+      "title": "Ce code QR n'est plus valide",
+      "body": "Chaque code ne fonctionne qu'une fois et expire au bout de 5 minutes. Scannez le nouveau code affiché sur votre ordinateur."
+    },
+    "expired_token": {
+      "title": "Ce code QR a expiré",
+      "body": "Chaque code ne fonctionne qu'une fois et expire au bout de 5 minutes. Scannez le nouveau code affiché sur votre ordinateur."
+    },
+    "unknown_device": {
+      "title": "Ce téléphone a été supprimé",
+      "body": "Il a été supprimé d'OpenCamera sur votre ordinateur. Scannez un nouveau code QR pour l'appairer à nouveau."
+    },
+    "busy": {
+      "title": "Un autre téléphone est connecté",
+      "body": "Déconnectez l'autre téléphone dans OpenCamera sur votre ordinateur, puis réessayez."
+    },
+    "version_mismatch": {
+      "title": "Mise à jour nécessaire",
+      "body": "Cette page est obsolète. Rechargez-la pour obtenir la version correspondant à votre ordinateur."
+    },
+    "replaced": {
+      "title": "Ouvert ailleurs",
+      "body": "OpenCamera diffuse maintenant depuis un autre onglet ou une autre fenêtre."
+    },
+    "desktop_disconnect": {
+      "title": "Déconnecté",
+      "body": "Votre ordinateur a mis fin à la connexion."
+    },
+    "user_disconnect": {
+      "title": "Déconnecté",
+      "body": "La caméra est éteinte."
+    },
+    "unreachable": {
+      "title": "Impossible de joindre votre ordinateur",
+      "body": "Assurez-vous qu'OpenCamera est ouvert sur votre ordinateur et que les deux appareils sont sur le même réseau Wi-Fi."
+    }
+  }
+}

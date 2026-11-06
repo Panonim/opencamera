@@ -1,0 +1,128 @@
+{
+  "intro": {
+    "title": "Use this phone as a webcam",
+    "titleNamed": "Connect to {{name}}",
+    "body": "Your camera streams directly to your computer over your local network. Nothing is recorded or uploaded.",
+    "permissionNote": "Camera access is requested only after you tap Start.",
+    "warningNote": "The security warning before this page is normal. The link is still encrypted.",
+    "start": "Start camera",
+    "starting": "Starting camera…"
+  },
+  "live": {
+    "connecting": "Connecting…",
+    "connected": "Connected",
+    "connectedTo": "Connected to {{name}}",
+    "reconnecting": "Reconnecting…",
+    "warning": {
+      "hot": "Phone is running hot",
+      "cpu": "Phone can't keep up",
+      "bandwidth": "Weak Wi-Fi signal"
+    },
+    "videoPaused": "Video paused",
+    "actual": "{{width}}×{{height}} · {{fps}} fps",
+    "batterySaver": "Battery saver · {{fps}} fps",
+    "fullscreen": "Full screen",
+    "exitFullscreen": "Exit full screen",
+    "disconnect": "Disconnect",
+    "dismiss": "Dismiss",
+    "pausedTitle": "Camera was paused",
+    "pausedBody": "Keep this page open and the screen on while streaming.",
+    "rotationTitle": "Turn on rotation lock",
+    "rotationBody": "Turning your phone flips the video on your computer between portrait and landscape.",
+    "settings": "Camera settings",
+    "pause": "Pause video",
+    "resume": "Resume video",
+    "switchCamera": "Switch camera"
+  },
+  "settings": {
+    "title": "Camera settings",
+    "close": "Close",
+    "camera": "Camera",
+    "resolution": "Resolution",
+    "frameRate": "Frame rate",
+    "fps": "{{fps}} fps",
+    "quality": "Quality",
+    "qualityPreset": {
+      "low-latency": "Low latency",
+      "balanced": "Balanced",
+      "high-quality": "High quality"
+    },
+    "bitrate": "Bitrate",
+    "auto": "Auto",
+    "manual": "Manual",
+    "mbps": "{{value}} Mbps",
+    "batterySaver": "Battery saver",
+    "on": "On",
+    "off": "Off",
+    "note": "Options your camera or browser doesn't support are disabled. Your computer can also change these settings."
+  },
+  "message": {
+    "actions": {
+      "tryAgain": "Try again",
+      "reload": "Reload",
+      "useThisTab": "Use this tab",
+      "reconnect": "Reconnect"
+    },
+    "no_pairing": {
+      "title": "Scan the QR code",
+      "body": "Open OpenCamera on your computer, choose “Connect a Device” and scan the QR code with your camera app."
+    },
+    "permission_denied": {
+      "title": "Camera access is blocked",
+      "body": "Tap the icon next to the address bar, open Permissions and allow Camera, then try again.",
+      "bodyIos": "Open Settings › Safari › Camera and choose Allow, then come back and try again."
+    },
+    "no_camera": {
+      "title": "No camera found",
+      "body": "This browser didn't find a usable camera."
+    },
+    "camera_busy": {
+      "title": "Camera is in use",
+      "body": "Another app is using the camera. Close it and try again."
+    },
+    "unsupported": {
+      "title": "Browser not supported",
+      "body": "Use Safari on iPhone, or Chrome or Firefox on Android, and open the https link from the QR code."
+    },
+    "unknown": {
+      "title": "Something went wrong",
+      "body": "The camera couldn't be started."
+    },
+    "invalid_token": {
+      "title": "This QR code is no longer valid",
+      "body": "Each code works once and expires after 5 minutes. Scan the new code shown on your computer."
+    },
+    "expired_token": {
+      "title": "This QR code has expired",
+      "body": "Each code works once and expires after 5 minutes. Scan the new code shown on your computer."
+    },
+    "unknown_device": {
+      "title": "This phone was removed",
+      "body": "It was removed from OpenCamera on your computer. Scan a new QR code to pair again."
+    },
+    "busy": {
+      "title": "Another phone is connected",
+      "body": "Disconnect the other phone in OpenCamera on your computer, then try again."
+    },
+    "version_mismatch": {
+      "title": "Update needed",
+      "body": "This page is out of date. Reload it to get the version matching your computer."
+    },
+    "replaced": {
+      "title": "Opened somewhere else",
+      "body": "OpenCamera is now streaming from another tab or window."
+    },
+    "desktop_disconnect": {
+      "title": "Disconnected",
+      "body": "Your computer ended the connection."
+    },
+    "user_disconnect": {
+      "title": "Disconnected",
+      "body": "The camera is off."
+    },
+    "unreachable": {
+      "title": "Can't reach your computer",
+      "body": "Make sure OpenCamera is open on your computer and that both devices are on the same Wi-Fi network."
+    }
+  }
+}

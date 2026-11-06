@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "OpenCamera",
+  "version": "0.1.0",
+  "identifier": "app.opencamera.desktop",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": ""
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "OpenCamera",
+        "width": 1180,
+        "height": 760,
+        "minWidth": 940,
+        "minHeight": 620
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost"
+    }
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEI3NDJFNDlFODAxRTdBOTIKUldTU2VoNkFudVJDdHlwMkt0VzZNdmxEUURSOXdxRXZmWlB6WHlxVnZPR1oxNXlHeWJQWEJoT3EK",
+      "endpoints": ["https://github.com/Panonim/opencamera/releases/latest/download/latest.json"],
+      "windows": { "installMode": "passive" }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "createUpdaterArtifacts": true,
+    "targets": ["nsis", "deb", "appimage", "dmg"],
+    "category": "Video",
+    "shortDescription": "Use your phone as a wireless webcam",
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"],
+    "windows": {
+      "nsis": { "installMode": "perMachine" }
+    },
+    "linux": {
+      "deb": { "recommends": ["v4l2loopback-dkms"] }
+    }
+  }
+}

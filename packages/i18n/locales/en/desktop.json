@@ -1,0 +1,391 @@
+{
+  "common": {
+    "version": "Version {{version}}",
+    "updateAvailable": "Update available",
+    "cancel": "Cancel",
+    "close": "Close",
+    "dismiss": "Dismiss",
+    "retry": "Retry",
+    "checkAgain": "Check again",
+    "discard": "Discard",
+    "saveChanges": "Save changes",
+    "unsavedChanges": "You have unsaved changes",
+    "cameraSettings": "Camera settings",
+    "fps": "{{fps}} fps",
+    "mbps": "{{value}} Mbps",
+    "ms": "{{value}} ms",
+    "percent": "{{value}}%"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "camera": "Camera",
+    "settings": "Settings",
+    "about": "About"
+  },
+  "phase": {
+    "idle": "Not connected",
+    "pairing": "Waiting for phone",
+    "connecting": "Connecting",
+    "connected": "Connected",
+    "reconnecting": "Reconnecting",
+    "failed": "Connection failed",
+    "disconnected": "Disconnected"
+  },
+  "window": {
+    "minimize": "Minimize",
+    "maximize": "Maximize",
+    "restore": "Restore",
+    "close": "Close"
+  },
+  "errors": {
+    "expired_token": {
+      "title": "That QR code expired",
+      "body": "Pairing codes work once and expire after 5 minutes. Show a new code and scan it again.",
+      "action": "Show new code"
+    },
+    "lost_connection": {
+      "title": "Connection lost",
+      "body": "Your phone stopped responding. Check that its screen is on, the browser tab is open and both devices are on the same Wi-Fi.",
+      "action": "Connect again"
+    },
+    "ice_failed": {
+      "title": "Video connection failed",
+      "body": "Your phone and computer could not reach each other directly. They may be on different networks, or a firewall is blocking OpenCamera.",
+      "action": "Network settings"
+    },
+    "negotiation_failed": {
+      "title": "Couldn't start the video stream",
+      "body": "The phone's browser and OpenCamera couldn't agree on a video format. Try Safari on iPhone or Chrome on Android.",
+      "action": "Try again"
+    },
+    "no_network": {
+      "title": "No local network",
+      "body": "This computer isn't connected to a local network. Connect to the same Wi-Fi as your phone.",
+      "action": "Network settings"
+    },
+    "port_in_use": {
+      "title": "Port already in use",
+      "body": "Another app is using OpenCamera's network port. Choose a different port in Settings.",
+      "action": "Change port"
+    },
+    "server_failed": {
+      "title": "Couldn't start the connection service",
+      "body": "OpenCamera couldn't listen for phones on your network. Check your network settings or restart the app.",
+      "action": "Network settings"
+    },
+    "unknown": {
+      "title": "Something went wrong",
+      "body": "OpenCamera ran into an unexpected problem. Details are available in About › Diagnostics.",
+      "action": "Dismiss"
+    }
+  },
+  "certificate": {
+    "intro": "It says “Your connection is not private” or “This Connection Is Not Private”. That's expected here.",
+    "android": "<b>Android Chrome:</b> tap Advanced › Proceed to {{host}} (unsafe)",
+    "iphone": "<b>iPhone Safari:</b> tap Show Details › visit this website",
+    "why": "Why does this happen?",
+    "reasons": {
+      "https": "Phone browsers only allow camera access on secure (https) pages.",
+      "authority": "Public certificate authorities can't issue certificates for private addresses like 192.168.x.x, so OpenCamera creates its own certificate on this computer.",
+      "encrypted": "The connection is still encrypted and stays on your local network.",
+      "remembered": "Browsers usually remember your choice, so you'll normally see this once per phone. It comes back if this computer's network address changes, since OpenCamera then makes a new certificate, or if the phone's browser data is cleared."
+    }
+  },
+  "device": {
+    "title": "Device",
+    "none": "No phone connected.",
+    "waiting": "Waiting for camera…",
+    "suspended": "Paused while the phone screen is off",
+    "videoPaused": "Video paused",
+    "frontCamera": "Front camera",
+    "rearCamera": "Rear camera",
+    "battery": "Battery",
+    "charging": "{{value}}% · charging",
+    "heat": "Heat",
+    "heatLevel": {
+      "nominal": "Normal",
+      "fair": "Warm",
+      "serious": "Hot",
+      "critical": "Very hot"
+    },
+    "saverActive": "Battery saver limits video to {{fps}} fps because the phone is low on battery or running hot."
+  },
+  "pair": {
+    "title": "Connect a device",
+    "description": "Scan this code with your phone's camera. Your phone and computer must be on the same Wi-Fi network.",
+    "qrAlt": "Pairing QR code",
+    "newCodeIn": "New code in {{time}}",
+    "creatingCode": "Creating code…",
+    "scanTitle": "1. Scan the code",
+    "scanBody": "Open your phone's camera and tap the link that appears.",
+    "warningTitle": "2. Continue past the security warning",
+    "startTitle": "3. Tap “Start camera”",
+    "startBody": "Allow camera access when asked. The code works once.",
+    "copyLink": "Copy link",
+    "hint": "Phone can't open the page? Check it's on the same Wi-Fi as this computer ({{address}}). Guest networks often block devices from seeing each other, and your firewall must allow OpenCamera on private networks.",
+    "unknownAddress": "unknown address",
+    "connecting": "Phone found, connecting…"
+  },
+  "performance": {
+    "title": "Performance",
+    "quality": {
+      "good": "Good",
+      "fair": "Fair",
+      "poor": "Poor"
+    },
+    "paused": "Paused",
+    "resolution": "Resolution",
+    "frameRate": "Frame rate",
+    "bitrate": "Bitrate",
+    "packetLoss": "Packet loss",
+    "roundTrip": "Round trip",
+    "droppedFrames": "Dropped frames",
+    "codec": "Codec",
+    "encoder": "Encoder",
+    "hardware": "hardware",
+    "software": "software",
+    "scaled": "Auto bitrate shrank the picture by {{scale}}× to keep up with the network."
+  },
+  "presets": {
+    "title": "Presets",
+    "empty": "Save the current phone and computer settings to switch between setups in one click.",
+    "delete": "Delete {{name}}",
+    "namePlaceholder": "Preset name",
+    "save": "Save current settings",
+    "needsPhone": "Connect a phone to save a preset."
+  },
+  "preview": {
+    "connecting": "Connecting to your phone…",
+    "reconnecting": "Reconnecting…",
+    "reconnectingBody": "Keep the OpenCamera page open on your phone. It reconnects automatically.",
+    "noPhone": "No phone connected",
+    "noPhoneBody": "Scan a QR code with your phone to use its camera as a webcam. No app install needed.",
+    "background": "Phone browser is in the background",
+    "backgroundBody": "Your phone's operating system pauses the camera while the browser isn't visible. Bring the OpenCamera page back to the front.",
+    "paused": "Video paused on your phone",
+    "pausedBody": "Resume video from the phone or the Camera page.",
+    "waiting": "Waiting for video…"
+  },
+  "streamWarning": {
+    "tip": "Lower the resolution or frame rate on the Camera page, or tap the moon button on the phone to dim its screen.",
+    "hot": {
+      "title": "Phone is running hot",
+      "body": "Hot phones slow down, which makes video choppy. {{tip}}"
+    },
+    "cpu": {
+      "title": "Phone can't keep up",
+      "body": "Its processor is overloaded, often because it's warm. {{tip}}"
+    },
+    "bandwidth": {
+      "title": "Wi-Fi is limiting quality",
+      "body": "Move the phone closer to the Wi-Fi router, or lower the resolution on the Camera page."
+    },
+    "batterySaver": "Turn on battery saver"
+  },
+  "update": {
+    "title": "Updates",
+    "label": "Software update",
+    "idle": "Check whether a newer version of OpenCamera is available.",
+    "checking": "Checking…",
+    "latest": "You're on the latest version.",
+    "available": "Version {{version}} is available.",
+    "downloading": "Downloading… The app restarts when done.",
+    "downloadingPercent": "Downloading {{percent}}%… The app restarts when done.",
+    "error": "Couldn't check for updates: {{message}}",
+    "install": "Install and restart",
+    "check": "Check for updates"
+  },
+  "virtualCamera": {
+    "title": "Virtual camera",
+    "status": {
+      "starting": "Starting",
+      "active": "Active",
+      "needsSetup": "Setup needed",
+      "unsupported": "Unavailable",
+      "error": "Error"
+    },
+    "install": "Install virtual camera",
+    "loadModule": "Load kernel module",
+    "bannerError": "The virtual camera stopped working",
+    "bannerSetup": "Install the virtual camera to finish setup",
+    "bannerBody": "Video apps can't see OpenCamera until it is installed.",
+    "activeHint": "Select <b>OpenCamera Virtual Camera</b> as the camera in Zoom, Teams, Discord, OBS or your browser.",
+    "preparing": "Preparing the virtual camera…",
+    "reinstall": "Reinstall component",
+    "remove": "Remove component"
+  },
+  "dashboard": {
+    "description": "Your phone's camera, available to every app on this computer.",
+    "disconnect": "Disconnect",
+    "connect": "Connect a Device",
+    "switchCamera": "Switch front/rear camera",
+    "mirror": "Mirror",
+    "rotate": "Rotate ({{degrees}}°)",
+    "grid": "Grid overlay"
+  },
+  "camera": {
+    "description": "Phone settings apply immediately. Computer settings apply when you click Save changes.",
+    "phoneTitle": "On your phone",
+    "phoneBadge": "Phone",
+    "needsPhone": "Connect a phone to change these settings.",
+    "lens": "Camera",
+    "lensBody": "Lenses your phone's browser makes available.",
+    "defaultLens": "Default camera",
+    "resolution": "Resolution",
+    "resolutionBody": "Only sizes your phone's camera supports can be chosen.",
+    "frameRate": "Frame rate",
+    "quality": "Quality",
+    "qualityBody": "Low latency keeps motion smooth, high quality keeps detail when Wi-Fi is busy.",
+    "qualityPreset": {
+      "low-latency": "Low latency",
+      "balanced": "Balanced",
+      "high-quality": "High quality"
+    },
+    "bitrate": "Bitrate",
+    "bitrateBody": "Auto adapts picture size to your Wi-Fi, Manual caps video data at a fixed rate.",
+    "auto": "Auto",
+    "manual": "Manual",
+    "batterySaver": "Battery saver",
+    "batterySaverBody": "Drops to 15 fps when the phone's battery is at 20% or less, or when it runs hot.",
+    "cameraOn": "Camera on",
+    "cameraOnBody": "Turning it off releases the phone's camera and the virtual camera shows the placeholder.",
+    "computerTitle": "On this computer",
+    "computerBadge": "Computer",
+    "mirror": "Mirror",
+    "mirrorBody": "Flip the image horizontally.",
+    "rotation": "Rotation",
+    "framing": "Framing",
+    "framingBody": "Fit shows the whole picture with bars, Fill crops to 16:9.",
+    "fit": "Fit",
+    "fill": "Fill",
+    "outputSize": "Output resolution",
+    "outputSizeBody": "Picture size apps receive. Higher sizes use more CPU, and your phone's resolution still limits the detail.",
+    "brightness": "Brightness",
+    "contrast": "Contrast",
+    "placeholder": "When no phone is connected",
+    "placeholderBody": "What apps see while the phone is disconnected or paused.",
+    "placeholderMode": {
+      "card": "Camera card",
+      "black": "Black",
+      "freeze": "Last frame"
+    },
+    "grid": "Grid overlay",
+    "gridBody": "Rule-of-thirds guide in the preview only.",
+    "resetImage": "Reset image adjustments"
+  },
+  "settings": {
+    "description": "Changes are applied when you click Save changes.",
+    "general": "General",
+    "language": "Language",
+    "theme": "Theme",
+    "system": "System",
+    "themeMode": {
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "launchAtLogin": "Launch at login",
+    "launchAtLoginBody": "Start OpenCamera when you sign in to this computer.",
+    "keepRunning": "Keep running after close",
+    "keepRunningBody": "Closing the window hides OpenCamera in the system tray so phones stay connected. Quit from the tray menu.",
+    "autoReconnect": "Reconnect paired phones automatically",
+    "autoReconnectBody": "At startup, listen on your local network so paired phones reconnect without a new QR code. Phones not seen for 24 hours must scan again. Takes effect next launch.",
+    "notifications": "Notifications",
+    "notificationsBody": "Notify when a phone connects or the connection is lost while OpenCamera is in the background.",
+    "setupGuide": "Setup guide",
+    "setupGuideBody": "Walk through installing the virtual camera and connecting a phone again.",
+    "openSetupGuide": "Open setup guide",
+    "network": "Network",
+    "status": "Status",
+    "statusBody": "Phones connect to this address. Nothing is reachable from outside your local network.",
+    "notListening": "Not listening",
+    "address": "Network address",
+    "addressBody": "Choose the adapter your phone's Wi-Fi network is on if the QR code doesn't open.",
+    "automatic": "Automatic",
+    "port": "Port",
+    "portBody": "TCP port for the phone page and signaling (1024-65535).",
+    "iceServer": "STUN/TURN server",
+    "iceServerBody": "Optional. Only needed if your phone and computer can't connect directly, e.g. on isolated networks.",
+    "advanced": "Advanced",
+    "developerMode": "Developer mode",
+    "developerModeBody": "Records detailed connection, video and decoder logs, and shows them live under Diagnostics on the About page. Never includes pairing codes or device secrets."
+  },
+  "about": {
+    "description": "Turns your phone into a wireless webcam. Video goes directly from your phone's browser to this computer over your local network. There are no accounts, no analytics and no cloud servers, and nothing is recorded.",
+    "reset": "Reset",
+    "resetLabel": "Reset everything to default",
+    "resetBody": "Restores every setting. Paired phones are kept.",
+    "resetConfirm": "Click again to confirm",
+    "diagnostics": "Diagnostics",
+    "refresh": "Refresh",
+    "copy": "Copy",
+    "copied": "Copied",
+    "diagnosticsBody": "Safe to share: contains no pairing codes, device secrets or video.",
+    "diagnosticsLive": "Developer mode is on, so detailed lines appear live."
+  },
+  "welcome": {
+    "title": "Turn your phone into a webcam",
+    "body": "Two quick steps. No app, no account. Works in Zoom, Teams, OBS and more.",
+    "start": "Get started",
+    "steps": {
+      "camera": "Virtual camera",
+      "phone": "Connect phone"
+    },
+    "stepOf": "Step {{step}} of {{total}}",
+    "back": "Back",
+    "skipSetup": "Skip setup",
+    "finish": "Finish",
+    "continue": "Continue",
+    "skipFinish": "Skip and finish",
+    "skip": "Skip for now",
+    "cameraTitle": "Set up the virtual camera",
+    "cameraBody": "Adds <b>OpenCamera Virtual Camera</b> to Zoom, Teams, Discord, OBS and your browser.",
+    "checking": "Checking the virtual camera…",
+    "ready": "Installed and ready",
+    "readyBody": "Pick it as your camera in any video app.",
+    "unsupported": "Not available on this computer",
+    "broken": "The virtual camera isn't working",
+    "notInstalled": "Not installed yet",
+    "permissionWindows": "Windows will ask for permission. Click Yes.",
+    "permissionPassword": "You'll be asked for your password.",
+    "phoneTitle": "Connect your phone",
+    "phoneBody": "Phone and computer on the same Wi-Fi.",
+    "connectedTo": "Connected to {{name}}",
+    "connectedPhone": "Connected to your phone",
+    "allSet": "You're all set.",
+    "connecting": "Connecting to your phone…",
+    "thisComputer": "this computer",
+    "scanTitle": "Scan the code",
+    "scanBody": "Open your phone's camera, point it at the code and tap the link.",
+    "warningTitle": "Tap past the warning",
+    "warningBody": "Your browser will say the page isn't private. That's expected.",
+    "allowTitle": "Allow the camera",
+    "allowBody": "Tap Allow when asked. Your video then shows up here.",
+    "showHow": "Show me how",
+    "expectedTitle": "That warning is expected",
+    "expectedBody": "OpenCamera runs on your own network with its own certificate, so phone browsers flag it. The video stays encrypted.",
+    "android": "Android",
+    "androidSteps": "Advanced › Proceed to {{host}}",
+    "iphone": "iPhone",
+    "iphoneSteps": "Show Details › visit this website"
+  },
+  "tray": {
+    "open": "Open OpenCamera",
+    "launchAtLogin": "Launch at login",
+    "quit": "Quit"
+  },
+  "notify": {
+    "yourPhone": "Your phone",
+    "connected": {
+      "title": "Phone connected",
+      "body": "{{name}} is streaming to OpenCamera Virtual Camera."
+    },
+    "disconnected": {
+      "title": "Phone disconnected",
+      "body": "The connection was lost."
+    },
+    "batteryLow": {
+      "title": "Phone battery low",
+      "body": "Plug in your phone to keep streaming."
+    }
+  }
+}

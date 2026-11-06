@@ -1,0 +1,391 @@
+{
+  "common": {
+    "version": "Wersja {{version}}",
+    "updateAvailable": "Dostępna aktualizacja",
+    "cancel": "Anuluj",
+    "close": "Zamknij",
+    "dismiss": "Zamknij",
+    "retry": "Ponów",
+    "checkAgain": "Sprawdź ponownie",
+    "discard": "Odrzuć",
+    "saveChanges": "Zapisz zmiany",
+    "unsavedChanges": "Masz niezapisane zmiany",
+    "cameraSettings": "Ustawienia kamery",
+    "fps": "{{fps}} kl./s",
+    "mbps": "{{value}} Mb/s",
+    "ms": "{{value}} ms",
+    "percent": "{{value}}%"
+  },
+  "nav": {
+    "dashboard": "Panel główny",
+    "camera": "Kamera",
+    "settings": "Ustawienia",
+    "about": "Informacje"
+  },
+  "phase": {
+    "idle": "Niepołączono",
+    "pairing": "Oczekiwanie na telefon",
+    "connecting": "Łączenie",
+    "connected": "Połączono",
+    "reconnecting": "Ponowne łączenie",
+    "failed": "Błąd połączenia",
+    "disconnected": "Rozłączono"
+  },
+  "window": {
+    "minimize": "Minimalizuj",
+    "maximize": "Maksymalizuj",
+    "restore": "Przywróć",
+    "close": "Zamknij"
+  },
+  "errors": {
+    "expired_token": {
+      "title": "Ten kod QR wygasł",
+      "body": "Kody parowania działają tylko raz i wygasają po 5 minutach. Wyświetl nowy kod i zeskanuj go ponownie.",
+      "action": "Pokaż nowy kod"
+    },
+    "lost_connection": {
+      "title": "Utracono połączenie",
+      "body": "Telefon przestał odpowiadać. Sprawdź, czy jego ekran jest włączony, karta przeglądarki otwarta, a oba urządzenia korzystają z tej samej sieci Wi-Fi.",
+      "action": "Połącz ponownie"
+    },
+    "ice_failed": {
+      "title": "Błąd połączenia wideo",
+      "body": "Telefon i komputer nie mogły połączyć się bezpośrednio. Mogą znajdować się w różnych sieciach albo zapora blokuje OpenCamera.",
+      "action": "Ustawienia sieci"
+    },
+    "negotiation_failed": {
+      "title": "Nie udało się uruchomić strumienia wideo",
+      "body": "Przeglądarka telefonu i OpenCamera nie uzgodniły formatu wideo. Spróbuj użyć Safari na iPhonie lub Chrome na Androidzie.",
+      "action": "Spróbuj ponownie"
+    },
+    "no_network": {
+      "title": "Brak sieci lokalnej",
+      "body": "Ten komputer nie jest połączony z siecią lokalną. Połącz się z tą samą siecią Wi-Fi co telefon.",
+      "action": "Ustawienia sieci"
+    },
+    "port_in_use": {
+      "title": "Port jest już używany",
+      "body": "Inna aplikacja korzysta z portu sieciowego OpenCamera. Wybierz inny port w Ustawieniach.",
+      "action": "Zmień port"
+    },
+    "server_failed": {
+      "title": "Nie udało się uruchomić usługi połączenia",
+      "body": "OpenCamera nie mogła nasłuchiwać telefonów w Twojej sieci. Sprawdź ustawienia sieci lub uruchom aplikację ponownie.",
+      "action": "Ustawienia sieci"
+    },
+    "unknown": {
+      "title": "Coś poszło nie tak",
+      "body": "OpenCamera napotkała nieoczekiwany problem. Szczegóły znajdziesz w Informacje › Diagnostyka.",
+      "action": "Zamknij"
+    }
+  },
+  "certificate": {
+    "intro": "Wyświetla się komunikat „Połączenie nie jest prywatne” lub „To połączenie nie jest prywatne”. To normalne.",
+    "android": "<b>Chrome na Androidzie:</b> dotknij Zaawansowane › Przejdź do {{host}} (niezabezpieczone)",
+    "iphone": "<b>Safari na iPhonie:</b> dotknij Pokaż szczegóły › odwiedź tę witrynę",
+    "why": "Dlaczego tak się dzieje?",
+    "reasons": {
+      "https": "Przeglądarki w telefonach zezwalają na dostęp do kamery tylko na bezpiecznych stronach (https).",
+      "authority": "Publiczne urzędy certyfikacji nie wystawiają certyfikatów dla adresów prywatnych, takich jak 192.168.x.x, więc OpenCamera tworzy własny certyfikat na tym komputerze.",
+      "encrypted": "Połączenie jest nadal szyfrowane i pozostaje w Twojej sieci lokalnej.",
+      "remembered": "Przeglądarki zwykle zapamiętują wybór, więc to ostrzeżenie zobaczysz zazwyczaj raz na telefon. Pojawi się ponownie, jeśli zmieni się adres sieciowy tego komputera, ponieważ OpenCamera utworzy wtedy nowy certyfikat, lub jeśli dane przeglądarki w telefonie zostaną wyczyszczone."
+    }
+  },
+  "device": {
+    "title": "Urządzenie",
+    "none": "Nie połączono telefonu.",
+    "waiting": "Oczekiwanie na kamerę…",
+    "suspended": "Wstrzymano, gdy ekran telefonu jest wyłączony",
+    "videoPaused": "Wideo wstrzymane",
+    "frontCamera": "Przednia kamera",
+    "rearCamera": "Tylna kamera",
+    "battery": "Bateria",
+    "charging": "{{value}}% · ładowanie",
+    "heat": "Temperatura",
+    "heatLevel": {
+      "nominal": "Normalna",
+      "fair": "Ciepła",
+      "serious": "Gorąca",
+      "critical": "Bardzo gorąca"
+    },
+    "saverActive": "Oszczędzanie baterii ogranicza wideo do {{fps}} kl./s, ponieważ telefon ma niski poziom baterii lub jest rozgrzany."
+  },
+  "pair": {
+    "title": "Połącz urządzenie",
+    "description": "Zeskanuj ten kod telefonem. Telefon i komputer muszą korzystać z tej samej sieci Wi-Fi.",
+    "qrAlt": "Kod QR do parowania",
+    "newCodeIn": "Nowy kod za {{time}}",
+    "creatingCode": "Tworzenie kodu…",
+    "scanTitle": "1. Zeskanuj kod",
+    "scanBody": "Otwórz aparat w telefonie i dotknij wyświetlonego linku.",
+    "warningTitle": "2. Przejdź dalej mimo ostrzeżenia",
+    "startTitle": "3. Dotknij „Uruchom kamerę”",
+    "startBody": "Zezwól na dostęp do kamery. Kod działa tylko raz.",
+    "copyLink": "Kopiuj link",
+    "hint": "Telefon nie może otworzyć strony? Sprawdź, czy korzysta z tej samej sieci Wi-Fi co ten komputer ({{address}}). Sieci dla gości często blokują widoczność urządzeń między sobą, a zapora musi zezwalać OpenCamera w sieciach prywatnych.",
+    "unknownAddress": "nieznany adres",
+    "connecting": "Znaleziono telefon, łączenie…"
+  },
+  "performance": {
+    "title": "Wydajność",
+    "quality": {
+      "good": "Dobra",
+      "fair": "Średnia",
+      "poor": "Słaba"
+    },
+    "paused": "Wstrzymano",
+    "resolution": "Rozdzielczość",
+    "frameRate": "Klatki na sekundę",
+    "bitrate": "Przepływność",
+    "packetLoss": "Utrata pakietów",
+    "roundTrip": "Czas odpowiedzi",
+    "droppedFrames": "Pominięte klatki",
+    "codec": "Kodek",
+    "encoder": "Koder",
+    "hardware": "sprzętowy",
+    "software": "programowy",
+    "scaled": "Automatyczna przepływność zmniejszyła obraz {{scale}}×, aby nadążyć za siecią."
+  },
+  "presets": {
+    "title": "Profile",
+    "empty": "Zapisz bieżące ustawienia telefonu i komputera, aby przełączać się między konfiguracjami jednym kliknięciem.",
+    "delete": "Usuń {{name}}",
+    "namePlaceholder": "Nazwa profilu",
+    "save": "Zapisz bieżące ustawienia",
+    "needsPhone": "Połącz telefon, aby zapisać profil."
+  },
+  "preview": {
+    "connecting": "Łączenie z telefonem…",
+    "reconnecting": "Ponowne łączenie…",
+    "reconnectingBody": "Pozostaw stronę OpenCamera otwartą w telefonie. Połączy się ponownie automatycznie.",
+    "noPhone": "Nie połączono telefonu",
+    "noPhoneBody": "Zeskanuj kod QR telefonem, aby używać jego kamery jako kamery internetowej. Nie trzeba instalować aplikacji.",
+    "background": "Przeglądarka telefonu działa w tle",
+    "backgroundBody": "System telefonu wstrzymuje kamerę, gdy przeglądarka nie jest widoczna. Przywróć stronę OpenCamera na pierwszy plan.",
+    "paused": "Wideo wstrzymane w telefonie",
+    "pausedBody": "Wznów wideo w telefonie lub na stronie Kamera.",
+    "waiting": "Oczekiwanie na wideo…"
+  },
+  "streamWarning": {
+    "tip": "Obniż rozdzielczość lub liczbę klatek na stronie Kamera albo dotknij przycisku księżyca w telefonie, aby przyciemnić ekran.",
+    "hot": {
+      "title": "Telefon się przegrzewa",
+      "body": "Rozgrzane telefony zwalniają, przez co wideo się zacina. {{tip}}"
+    },
+    "cpu": {
+      "title": "Telefon nie nadąża",
+      "body": "Jego procesor jest przeciążony, często z powodu nagrzania. {{tip}}"
+    },
+    "bandwidth": {
+      "title": "Wi-Fi ogranicza jakość",
+      "body": "Przysuń telefon bliżej routera Wi-Fi lub obniż rozdzielczość na stronie Kamera."
+    },
+    "batterySaver": "Włącz oszczędzanie baterii"
+  },
+  "update": {
+    "title": "Aktualizacje",
+    "label": "Aktualizacja oprogramowania",
+    "idle": "Sprawdź, czy dostępna jest nowsza wersja OpenCamera.",
+    "checking": "Sprawdzanie…",
+    "latest": "Masz najnowszą wersję.",
+    "available": "Dostępna jest wersja {{version}}.",
+    "downloading": "Pobieranie… Aplikacja uruchomi się ponownie po zakończeniu.",
+    "downloadingPercent": "Pobieranie {{percent}}%… Aplikacja uruchomi się ponownie po zakończeniu.",
+    "error": "Nie udało się sprawdzić aktualizacji: {{message}}",
+    "install": "Zainstaluj i uruchom ponownie",
+    "check": "Sprawdź aktualizacje"
+  },
+  "virtualCamera": {
+    "title": "Kamera wirtualna",
+    "status": {
+      "starting": "Uruchamianie",
+      "active": "Aktywna",
+      "needsSetup": "Wymaga konfiguracji",
+      "unsupported": "Niedostępna",
+      "error": "Błąd"
+    },
+    "install": "Zainstaluj kamerę wirtualną",
+    "loadModule": "Załaduj moduł jądra",
+    "bannerError": "Kamera wirtualna przestała działać",
+    "bannerSetup": "Zainstaluj kamerę wirtualną, aby zakończyć konfigurację",
+    "bannerBody": "Aplikacje wideo nie widzą OpenCamera, dopóki nie zostanie zainstalowana.",
+    "activeHint": "Wybierz <b>OpenCamera Virtual Camera</b> jako kamerę w Zoom, Teams, Discord, OBS lub przeglądarce.",
+    "preparing": "Przygotowywanie kamery wirtualnej…",
+    "reinstall": "Zainstaluj komponent ponownie",
+    "remove": "Usuń komponent"
+  },
+  "dashboard": {
+    "description": "Kamera telefonu dostępna dla wszystkich aplikacji na tym komputerze.",
+    "disconnect": "Rozłącz",
+    "connect": "Połącz urządzenie",
+    "switchCamera": "Przełącz przednią/tylną kamerę",
+    "mirror": "Odbicie lustrzane",
+    "rotate": "Obróć ({{degrees}}°)",
+    "grid": "Siatka kadrowania"
+  },
+  "camera": {
+    "description": "Ustawienia telefonu są stosowane od razu. Ustawienia komputera są stosowane po kliknięciu Zapisz zmiany.",
+    "phoneTitle": "W telefonie",
+    "phoneBadge": "Telefon",
+    "needsPhone": "Połącz telefon, aby zmienić te ustawienia.",
+    "lens": "Kamera",
+    "lensBody": "Obiektywy udostępniane przez przeglądarkę telefonu.",
+    "defaultLens": "Kamera domyślna",
+    "resolution": "Rozdzielczość",
+    "resolutionBody": "Można wybrać tylko rozmiary obsługiwane przez kamerę telefonu.",
+    "frameRate": "Klatki na sekundę",
+    "quality": "Jakość",
+    "qualityBody": "Niskie opóźnienie zapewnia płynny ruch, wysoka jakość zachowuje szczegóły, gdy Wi-Fi jest obciążone.",
+    "qualityPreset": {
+      "low-latency": "Niskie opóźnienie",
+      "balanced": "Zrównoważona",
+      "high-quality": "Wysoka jakość"
+    },
+    "bitrate": "Przepływność",
+    "bitrateBody": "Automatycznie dostosowuje rozmiar obrazu do Wi-Fi, Ręcznie ogranicza dane wideo do stałej wartości.",
+    "auto": "Automatycznie",
+    "manual": "Ręcznie",
+    "batterySaver": "Oszczędzanie baterii",
+    "batterySaverBody": "Obniża do 15 kl./s, gdy bateria telefonu ma 20% lub mniej albo telefon się nagrzewa.",
+    "cameraOn": "Kamera włączona",
+    "cameraOnBody": "Wyłączenie zwalnia kamerę telefonu, a kamera wirtualna pokazuje obraz zastępczy.",
+    "computerTitle": "Na tym komputerze",
+    "computerBadge": "Komputer",
+    "mirror": "Odbicie lustrzane",
+    "mirrorBody": "Odwróć obraz w poziomie.",
+    "rotation": "Obrót",
+    "framing": "Kadrowanie",
+    "framingBody": "Dopasuj pokazuje cały obraz z paskami, Wypełnij przycina do 16:9.",
+    "fit": "Dopasuj",
+    "fill": "Wypełnij",
+    "outputSize": "Rozdzielczość wyjściowa",
+    "outputSizeBody": "Rozmiar obrazu otrzymywany przez aplikacje. Większe rozmiary bardziej obciążają procesor, a szczegółowość nadal ogranicza rozdzielczość telefonu.",
+    "brightness": "Jasność",
+    "contrast": "Kontrast",
+    "placeholder": "Gdy telefon nie jest połączony",
+    "placeholderBody": "Co widzą aplikacje, gdy telefon jest rozłączony lub wstrzymany.",
+    "placeholderMode": {
+      "card": "Karta kamery",
+      "black": "Czarny",
+      "freeze": "Ostatnia klatka"
+    },
+    "grid": "Siatka kadrowania",
+    "gridBody": "Siatka trójpodziału tylko w podglądzie.",
+    "resetImage": "Resetuj ustawienia obrazu"
+  },
+  "settings": {
+    "description": "Zmiany są stosowane po kliknięciu Zapisz zmiany.",
+    "general": "Ogólne",
+    "language": "Język",
+    "theme": "Motyw",
+    "system": "Systemowy",
+    "themeMode": {
+      "light": "Jasny",
+      "dark": "Ciemny"
+    },
+    "launchAtLogin": "Uruchamiaj przy logowaniu",
+    "launchAtLoginBody": "Uruchamiaj OpenCamera po zalogowaniu się na tym komputerze.",
+    "keepRunning": "Działaj po zamknięciu okna",
+    "keepRunningBody": "Zamknięcie okna ukrywa OpenCamera w zasobniku systemowym, aby telefony pozostały połączone. Zakończ z menu zasobnika.",
+    "autoReconnect": "Automatycznie łącz ponownie sparowane telefony",
+    "autoReconnectBody": "Przy uruchomieniu nasłuchuj w sieci lokalnej, aby sparowane telefony łączyły się bez nowego kodu QR. Telefony niewidziane od 24 godzin muszą zeskanować kod ponownie. Zadziała od następnego uruchomienia.",
+    "notifications": "Powiadomienia",
+    "notificationsBody": "Powiadamiaj o połączeniu telefonu lub utracie połączenia, gdy OpenCamera działa w tle.",
+    "setupGuide": "Przewodnik konfiguracji",
+    "setupGuideBody": "Ponownie przejdź przez instalację kamery wirtualnej i łączenie telefonu.",
+    "openSetupGuide": "Otwórz przewodnik konfiguracji",
+    "network": "Sieć",
+    "status": "Stan",
+    "statusBody": "Telefony łączą się z tym adresem. Nic nie jest dostępne spoza Twojej sieci lokalnej.",
+    "notListening": "Nie nasłuchuje",
+    "address": "Adres sieciowy",
+    "addressBody": "Wybierz kartę sieciową, do której podłączona jest sieć Wi-Fi telefonu, jeśli kod QR się nie otwiera.",
+    "automatic": "Automatycznie",
+    "port": "Port",
+    "portBody": "Port TCP dla strony telefonu i sygnalizacji (1024-65535).",
+    "iceServer": "Serwer STUN/TURN",
+    "iceServerBody": "Opcjonalnie. Potrzebny tylko wtedy, gdy telefon i komputer nie mogą połączyć się bezpośrednio, np. w izolowanych sieciach.",
+    "advanced": "Zaawansowane",
+    "developerMode": "Tryb programisty",
+    "developerModeBody": "Zapisuje szczegółowe logi połączenia, wideo i dekodera oraz pokazuje je na żywo w Diagnostyce na stronie Informacje. Nigdy nie zawiera kodów parowania ani tajnych danych urządzeń."
+  },
+  "about": {
+    "description": "Zamienia telefon w bezprzewodową kamerę internetową. Wideo trafia bezpośrednio z przeglądarki telefonu do tego komputera przez sieć lokalną. Bez kont, bez analityki i bez serwerów w chmurze, a nic nie jest nagrywane.",
+    "reset": "Resetuj",
+    "resetLabel": "Przywróć wszystko do domyślnych",
+    "resetBody": "Przywraca wszystkie ustawienia. Sparowane telefony zostają zachowane.",
+    "resetConfirm": "Kliknij ponownie, aby potwierdzić",
+    "diagnostics": "Diagnostyka",
+    "refresh": "Odśwież",
+    "copy": "Kopiuj",
+    "copied": "Skopiowano",
+    "diagnosticsBody": "Bezpieczne do udostępnienia: nie zawiera kodów parowania, tajnych danych urządzeń ani wideo.",
+    "diagnosticsLive": "Tryb programisty jest włączony, więc szczegółowe wpisy pojawiają się na żywo."
+  },
+  "welcome": {
+    "title": "Zamień telefon w kamerę internetową",
+    "body": "Dwa szybkie kroki. Bez aplikacji i konta. Działa z Zoom, Teams, OBS i innymi.",
+    "start": "Rozpocznij",
+    "steps": {
+      "camera": "Kamera wirtualna",
+      "phone": "Połącz telefon"
+    },
+    "stepOf": "Krok {{step}} z {{total}}",
+    "back": "Wstecz",
+    "skipSetup": "Pomiń konfigurację",
+    "finish": "Zakończ",
+    "continue": "Dalej",
+    "skipFinish": "Pomiń i zakończ",
+    "skip": "Pomiń na razie",
+    "cameraTitle": "Skonfiguruj kamerę wirtualną",
+    "cameraBody": "Dodaje <b>OpenCamera Virtual Camera</b> do Zoom, Teams, Discord, OBS i przeglądarki.",
+    "checking": "Sprawdzanie kamery wirtualnej…",
+    "ready": "Zainstalowano i gotowe",
+    "readyBody": "Wybierz ją jako kamerę w dowolnej aplikacji wideo.",
+    "unsupported": "Niedostępne na tym komputerze",
+    "broken": "Kamera wirtualna nie działa",
+    "notInstalled": "Nie zainstalowano",
+    "permissionWindows": "System Windows poprosi o zgodę. Kliknij Tak.",
+    "permissionPassword": "Zostaniesz poproszony o hasło.",
+    "phoneTitle": "Połącz telefon",
+    "phoneBody": "Telefon i komputer muszą korzystać z tej samej sieci Wi-Fi.",
+    "connectedTo": "Połączono z {{name}}",
+    "connectedPhone": "Połączono z telefonem",
+    "allSet": "Wszystko gotowe.",
+    "connecting": "Łączenie z telefonem…",
+    "thisComputer": "tym komputerem",
+    "scanTitle": "Zeskanuj kod",
+    "scanBody": "Otwórz aparat w telefonie, skieruj go na kod i dotknij linku.",
+    "warningTitle": "Przejdź dalej mimo ostrzeżenia",
+    "warningBody": "Przeglądarka poinformuje, że strona nie jest prywatna. To normalne.",
+    "allowTitle": "Zezwól na dostęp do kamery",
+    "allowBody": "Dotknij Zezwól, gdy pojawi się prośba. Wideo pojawi się tutaj.",
+    "showHow": "Pokaż jak",
+    "expectedTitle": "To ostrzeżenie jest normalne",
+    "expectedBody": "OpenCamera działa w Twojej sieci z własnym certyfikatem, dlatego przeglądarki telefonów to oznaczają. Wideo pozostaje szyfrowane.",
+    "android": "Android",
+    "androidSteps": "Zaawansowane › Przejdź do {{host}}",
+    "iphone": "iPhone",
+    "iphoneSteps": "Pokaż szczegóły › odwiedź tę witrynę"
+  },
+  "tray": {
+    "open": "Otwórz OpenCamera",
+    "launchAtLogin": "Uruchamiaj przy logowaniu",
+    "quit": "Zamknij"
+  },
+  "notify": {
+    "yourPhone": "Twój telefon",
+    "connected": {
+      "title": "Połączono telefon",
+      "body": "{{name}} przesyła obraz do OpenCamera Virtual Camera."
+    },
+    "disconnected": {
+      "title": "Rozłączono telefon",
+      "body": "Połączenie zostało utracone."
+    },
+    "batteryLow": {
+      "title": "Niski poziom baterii telefonu",
+      "body": "Podłącz telefon do ładowarki, aby kontynuować przesyłanie."
+    }
+  }
+}
