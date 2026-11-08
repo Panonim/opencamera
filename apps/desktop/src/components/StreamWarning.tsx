@@ -28,7 +28,7 @@ export function StreamWarning({ live }: { live: boolean }) {
   const Icon = ICON[warning];
 
   return (
-    <div role="status" className="mt-3 flex items-start gap-3 rounded-lg border border-warning/40 bg-warning/10 p-3">
+    <div role="status" className="mt-3 flex items-start gap-3 rounded-lg bg-warning/10 p-3">
       <Icon className="mt-0.5 size-4 shrink-0 text-warning" />
       <div className="flex min-w-0 flex-col gap-2">
         <div>

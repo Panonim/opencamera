@@ -14,7 +14,7 @@ export function Segmented<T extends string | number>({
 }) {
   const index = options.findIndex((o) => o.value === value);
   return (
-    <div role="radiogroup" className={cn("relative inline-grid grid-flow-col auto-cols-fr rounded-md border bg-elevated p-0.5", disabled && "opacity-50")}>
+    <div role="radiogroup" className={cn("relative inline-grid grid-flow-col auto-cols-fr rounded-md bg-elevated p-0.5", disabled && "opacity-50")}>
       {index >= 0 && (
         <span
           aria-hidden

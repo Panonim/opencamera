@@ -1,4 +1,4 @@
-<img src="docs/images/logo-preview.svg" width=45% alt="Opencamera logo"> <br><br>
+<img src="docs/images/logo-preview.svg" width=400px alt="Opencamera logo"> <br><br>
 
 OpenCamera turns your phone into a webcam for your computer. The desktop app installs a virtual camera, so video apps like Zoom, Teams, Meet or OBS can use your phone's camera as if it were a regular webcam. The phone's camera stream goes straight to your computer over your local Wi-Fi network, and phones on your network are the only ones that can reach it.
 
@@ -28,7 +28,7 @@ Connecting takes a few seconds and needs no app on the phone. Open OpenCamera on
 - Single-use pairing codes that expire after 5 minutes
 
 <br>
-<img src="docs/images/locales.svg" width="60%" alt="Translation progress per language">
+<p align="center"><img src="docs/images/locales.svg" width="500px" alt="Translation progress per language"></p>
 
 
 <p align="center">

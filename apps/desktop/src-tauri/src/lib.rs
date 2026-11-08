@@ -254,6 +254,14 @@ fn update_settings(handle: AppHandle, settings: Settings) -> Result<(), String> 
     save_settings(&handle, settings)
 }
 
+/// Forgets every paired phone and restores default settings, which brings back the first-run screen.
+#[tauri::command]
+fn reset_all(handle: AppHandle) -> Result<(), String> {
+    let app = handle.state::<AppState>();
+    app.with_engine(|e| e.devices().iter().for_each(|d| e.forget_device(&d.id)))?;
+    save_settings(&handle, Settings::default())
+}
+
 /// Saves the settings to disk and applies the changes to the engine, startup entry and tray menu.
 fn save_settings(handle: &AppHandle, settings: Settings) -> Result<(), String> {
     let app = handle.state::<AppState>();
@@ -371,6 +379,7 @@ pub fn run() {
             setup_virtual_camera,
             remove_virtual_camera,
             update_settings,
+            reset_all,
         ])
         .build(tauri::generate_context!())
         .expect("error while building OpenCamera");

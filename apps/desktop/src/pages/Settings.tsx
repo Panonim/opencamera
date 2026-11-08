@@ -65,10 +65,10 @@ function SettingsForm({ settings }: { settings: Settings }) {
   return (
     <Page className="max-w-3xl">
       <PageHeader title={t("nav.settings")} description={t("settings.description")} />
-      {error && <div className="mb-5 rounded-md border border-danger/30 bg-danger/10 p-3 text-sm">{error}</div>}
+      {error && <div className="mb-5 rounded-md bg-danger/10 p-3 text-sm">{error}</div>}
       <div className="flex flex-col gap-5">
         <Card title={t("settings.general")}>
-          <div className="divide-y">
+          <div className="divide-y divide-border/60">
             <SettingRow label={t("settings.language")}>
               <Select value={draft.language} onValueChange={(language) => set({ language })}>
                 <SelectTrigger className="w-40">
@@ -117,7 +117,7 @@ function SettingsForm({ settings }: { settings: Settings }) {
         </Card>
 
         <Card title={t("settings.network")}>
-          <div className="divide-y">
+          <div className="divide-y divide-border/60">
             <SettingRow label={t("settings.status")} description={t("settings.statusBody")}>
               <span className="font-mono text-xs text-muted-foreground">{server?.running ? `${server.address}:${server.port}` : t("settings.notListening")}</span>
             </SettingRow>

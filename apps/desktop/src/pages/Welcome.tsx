@@ -1,20 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Skeleton } from "@/components/ui/skeleton";
-import { cn, formatCountdown } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { t } from "@opencamera/i18n/desktop";
 import { rich } from "@opencamera/i18n/react";
 import { Logo } from "@opencamera/ui/Logo";
 import { AlertCircle, ArrowRight, CheckCircle2, ChevronLeft, Loader2, Lock, Wifi } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
-import { PairError, usePairing } from "../components/PairDialog";
+import { PairError, PairQr, usePairing } from "../components/PairDialog";
 import { useVirtualCamera } from "../components/VirtualCameraCard";
 import { api } from "../lib/api";
 import { useApp } from "../store";
 
 const STEPS = ["camera", "phone"] as const;
 const FADE_MS = 200;
-const rise = "animate-in fade-in slide-in-from-bottom-4 fill-mode-both duration-700 ease-out motion-reduce:animate-none";
+const rise = "animate-in fade-in slide-in-from-bottom-4 fill-mode-both duration-700 ease-out will-change-transform motion-reduce:animate-none";
 
 const TONES = {
   neutral: { icon: Loader2, className: "animate-spin text-muted-foreground" },
@@ -25,7 +24,7 @@ const TONES = {
 function StatusLine({ tone, title, body }: { tone: keyof typeof TONES; title: string; body?: ReactNode }) {
   const { icon: Icon, className } = TONES[tone];
   return (
-    <div className="flex items-start gap-3 rounded-lg border bg-card p-4">
+    <div className="flex items-start gap-3 rounded-lg bg-card p-4">
       <Icon className={cn("mt-0.5 size-4 shrink-0", className)} />
       <div className="min-w-0">
         <div className="text-sm font-medium">{title}</div>
@@ -51,8 +50,8 @@ function IntroStep({ onStart }: { onStart: () => void }) {
   return (
     <div className="flex flex-col items-center text-center">
       <div className={cn("relative mb-8", rise)}>
-        <div className="absolute -inset-4 rounded-full bg-primary/15 blur-2xl" />
-        <div className="relative flex size-20 items-center justify-center rounded-3xl border bg-card shadow-lg">
+        <div className="absolute -inset-12 bg-radial from-primary/15 to-transparent to-70%" />
+        <div className="relative flex size-20 items-center justify-center rounded-3xl bg-card shadow-lg">
           <Logo className="size-10" />
         </div>
       </div>
@@ -146,8 +145,6 @@ function PhoneStep() {
 
 function PairPanel() {
   const { pairing, qr, error, remaining } = usePairing(true);
-  const address = useApp((s) => s.state?.server.address);
-  const host = pairing ? new URL(pairing.url).hostname : (address ?? t("welcome.thisComputer"));
 
   // Drops the unused code when leaving the step without connecting.
   useEffect(
@@ -161,18 +158,13 @@ function PairPanel() {
   return (
     <div className="@container">
       <div className="flex flex-col items-center gap-6 @md:flex-row @md:items-start">
-        <div className="flex shrink-0 flex-col items-center gap-2">
-          <div className="size-44 rounded-xl border bg-white p-3">
-            {qr ? <img alt={t("pair.qrAlt")} className="size-full" src={`data:image/svg+xml;charset=utf-8,${encodeURIComponent(qr)}`} /> : <Skeleton className="size-full" />}
-          </div>
-          <span className="text-xs tabular-nums text-muted-foreground">{pairing ? t("pair.newCodeIn", { time: formatCountdown(remaining) }) : t("pair.creatingCode")}</span>
-        </div>
+        <PairQr qr={qr} remaining={remaining} ready={!!pairing} className="size-44 p-3" />
         <ol className="flex w-full min-w-0 flex-col gap-4">
           <GuideStep n={1} title={t("welcome.scanTitle")}>
             {t("welcome.scanBody")}
           </GuideStep>
           <GuideStep n={2} title={t("welcome.warningTitle")}>
-            {t("welcome.warningBody")} <CertificatePopover host={host} />
+            {t("welcome.warningBody")} <CertificatePopover />
           </GuideStep>
           <GuideStep n={3} title={t("welcome.allowTitle")}>
             {t("welcome.allowBody")}
@@ -183,23 +175,17 @@ function PairPanel() {
   );
 }
 
-function CertificatePopover({ host }: { host: string }) {
+function CertificatePopover() {
   return (
     <Popover>
       <PopoverTrigger className="rounded-sm font-medium text-foreground underline underline-offset-4 outline-none hover:text-primary focus-visible:ring-2 focus-visible:ring-ring/50">
-        {t("welcome.showHow")}
+        {t("welcome.whyWarning")}
       </PopoverTrigger>
       <PopoverContent className="flex w-96 flex-col gap-3">
         <div>
           <div className="font-medium">{t("welcome.expectedTitle")}</div>
           <p className="mt-1 text-muted-foreground">{t("welcome.expectedBody")}</p>
         </div>
-        <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 border-t pt-3">
-          <dt className="font-medium">{t("welcome.android")}</dt>
-          <dd className="break-words text-muted-foreground">{t("welcome.androidSteps", { host })}</dd>
-          <dt className="font-medium">{t("welcome.iphone")}</dt>
-          <dd className="text-muted-foreground">{t("welcome.iphoneSteps")}</dd>
-        </dl>
       </PopoverContent>
     </Popover>
   );

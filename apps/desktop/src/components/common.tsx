@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import type { Phase } from "@/lib/api";
 import { t } from "@opencamera/i18n/desktop";
 import { Loader2 } from "lucide-react";
-import type { ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
 
 export function PageHeader({ title, description, actions }: { title: string; description?: string; actions?: ReactNode }) {
   return (
@@ -35,9 +35,9 @@ export function Card({
   collapsed?: boolean;
 }) {
   return (
-    <section className={cn("rounded-lg border bg-card", className)}>
+    <section className={cn("rounded-lg bg-card shadow-sm dark:shadow-none", className)}>
       {title && (
-        <div className={cn("flex items-center justify-between gap-3 border-b px-4 py-3 transition-[border-color] duration-200", collapsed && "border-transparent")}>
+        <div className={cn("flex items-center justify-between gap-3 rounded-t-lg bg-elevated px-4 dark:bg-elevated/60 py-3 transition-[border-radius] duration-200", collapsed && "rounded-b-lg")}>
           <h2 className="text-base font-semibold">{title}</h2>
           {badge}
         </div>
@@ -64,14 +64,48 @@ export function SettingRow({ label, description, children, disabled }: { label: 
   );
 }
 
+// Single-line label with an action on the right.
+export function ActionRow({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <div className="flex items-center justify-between gap-4">
+      <div className="min-w-0 truncate text-sm font-medium">{label}</div>
+      <div className="shrink-0">{children}</div>
+    </div>
+  );
+}
+
+// Fades in new content when the id changes, staying static on first render.
+export function Swap({ id, children }: { id: string; children: ReactNode }) {
+  const first = useRef<string | null>(id);
+  if (id !== first.current) first.current = null;
+  return (
+    <span key={id} className={cn("inline-flex items-center gap-2", first.current === null && "animate-in fade-in zoom-in-95 duration-200 motion-reduce:animate-none")}>
+      {children}
+    </span>
+  );
+}
+
+// Stacks all labels in one grid cell, so the width stays put while they crossfade.
+export function Crossfade({ active, labels }: { active: number; labels: string[] }) {
+  return (
+    <span className="grid justify-items-center">
+      {labels.map((label, i) => (
+        <span key={label} aria-hidden={i !== active} className={cn("col-start-1 row-start-1 transition-opacity duration-200 motion-reduce:transition-none", i !== active && "opacity-0")}>
+          {label}
+        </span>
+      ))}
+    </span>
+  );
+}
+
 export function Badge({ children, tone = "neutral" }: { children: ReactNode; tone?: "neutral" | "success" | "warning" | "danger" }) {
   const tones = {
-    neutral: "border-border bg-elevated text-muted-foreground",
-    success: "border-success/30 bg-success/10 text-success",
-    warning: "border-warning/30 bg-warning/10 text-warning",
-    danger: "border-danger/30 bg-danger/10 text-danger",
+    neutral: "bg-elevated text-muted-foreground",
+    success: "bg-success/10 text-success",
+    warning: "bg-warning/10 text-warning",
+    danger: "bg-danger/10 text-danger",
   };
-  return <span className={cn("inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-xs font-medium", tones[tone])}>{children}</span>;
+  return <span className={cn("inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-xs font-medium", tones[tone])}>{children}</span>;
 }
 
 export const phaseLabel = (phase: Phase) => t(`phase.${phase}`);
@@ -114,7 +148,7 @@ export function SaveBar({ visible, canSave, saving, onSave, onDiscard }: { visib
     >
       <div
         role="status"
-        className={cn("flex items-center gap-4 rounded-lg border bg-card py-2.5 pr-2.5 pl-4 shadow-lg", visible && "pointer-events-auto")}
+        className={cn("flex items-center gap-4 rounded-lg bg-card py-2.5 pr-2.5 pl-4 shadow-lg", visible && "pointer-events-auto")}
       >
         <span className="text-sm font-medium">{t("common.unsavedChanges")}</span>
         <div className="flex gap-2">

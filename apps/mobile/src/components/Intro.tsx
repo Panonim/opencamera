@@ -23,7 +23,7 @@ export function Intro() {
         {t("intro.body")}
       </Hero>
       <div className={`flex flex-col gap-4 ${RISE} delay-200`}>
-        <ul className="flex flex-col divide-y rounded-2xl border bg-card text-[13px] leading-snug text-muted-foreground">
+        <ul className="flex flex-col divide-y rounded-2xl bg-card text-[13px] leading-snug text-muted-foreground">
           {NOTES.map(({ icon: Icon, key }) => (
             <li key={key} className="flex items-start gap-3 p-3.5">
               <Icon className="mt-px size-4 shrink-0 text-foreground" />

@@ -6,7 +6,7 @@ import { onPreviewFrame, useApp } from "../store";
 function Overlay({ icon, title, body }: { icon: React.ReactNode; title: string; body?: string }) {
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-card/95 p-6 text-center">
-      <div className="flex size-12 items-center justify-center rounded-full border bg-elevated text-muted-foreground">{icon}</div>
+      <div className="flex size-12 items-center justify-center rounded-full bg-elevated text-muted-foreground">{icon}</div>
       <div>
         <div className="text-sm font-medium">{title}</div>
         {body && <p className="mx-auto mt-1 max-w-sm text-xs leading-relaxed text-muted-foreground">{body}</p>}
@@ -68,7 +68,7 @@ export function Preview() {
   }
 
   return (
-    <div className="relative aspect-video min-h-64 w-full overflow-hidden rounded-lg border bg-black">
+    <div className="relative aspect-video min-h-64 w-full overflow-hidden rounded-lg bg-black">
       <canvas ref={canvas} className="size-full object-contain" />
       {settings?.grid && phase === "connected" && (
         <div className="pointer-events-none absolute inset-0 grid grid-cols-3 grid-rows-3">

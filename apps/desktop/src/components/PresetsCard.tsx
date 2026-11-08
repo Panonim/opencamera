@@ -36,7 +36,7 @@ export function PresetsCard({
       ) : (
         <div className="mb-4 flex flex-wrap gap-2">
           {presets.map((p) => (
-            <div key={p.id} className="inline-flex items-center rounded-md border bg-elevated">
+            <div key={p.id} className="inline-flex items-center rounded-md bg-elevated">
               <button onClick={() => onApply(p)} className="h-8 rounded-l-md px-3 text-sm font-medium transition-colors hover:bg-accent">
                 {p.name}
               </button>

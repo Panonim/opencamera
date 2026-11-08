@@ -1,20 +1,14 @@
 import { cn } from "@/lib/utils";
 import { t } from "@opencamera/i18n/desktop";
-import { rich } from "@opencamera/i18n/react";
 import { ChevronRight } from "lucide-react";
 
 const REASONS = ["https", "authority", "encrypted", "remembered"] as const;
-const bold = (s: string) => <span className="font-medium text-foreground">{s}</span>;
 
-// Explains the phone browser's self-signed certificate warning and how to continue past it.
-export function CertificateHelp({ host, className }: { host?: string; className?: string }) {
+// Explains the phone browser's self-signed certificate warning.
+export function CertificateHelp({ className }: { className?: string }) {
   return (
     <div className={cn("flex flex-col gap-1.5 text-muted-foreground", className)}>
       <p>{t("certificate.intro")}</p>
-      <ul className="flex flex-col gap-0.5">
-        <li>{rich(t("certificate.android", { host: host ?? "…" }), { b: bold })}</li>
-        <li>{rich(t("certificate.iphone"), { b: bold })}</li>
-      </ul>
       <CertificateWhy />
     </div>
   );

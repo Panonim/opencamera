@@ -92,7 +92,6 @@ jobs:
           ASSETS: ${{ matrix.assets }}
           PLATFORM: ${{ matrix.name }}
         run: |
-          # Uploads under version-less names so the README links and updater URLs never change.
           for f in $ASSETS; do
             ext=$(echo "$f" | grep -oE '(app\.tar\.gz|exe|deb|AppImage|dmg)(\.sig)?$')
             name="OpenCamera-$PLATFORM.$ext"

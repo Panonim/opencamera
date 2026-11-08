@@ -61,22 +61,6 @@ export interface Settings {
   developerMode: boolean;
 }
 
-export const DEFAULT_SETTINGS: Omit<Settings, "onboarded"> = {
-  theme: "system",
-  language: "system",
-  autoReconnect: true,
-  notifications: true,
-  launchAtLogin: false,
-  keepRunning: false,
-  port: 47823,
-  address: "",
-  iceServer: "",
-  processing: { mirror: false, rotation: 0, brightness: 0, contrast: 0, framing: "fit", placeholder: "card", outputSize: "1080p" },
-  grid: false,
-  presets: [],
-  developerMode: false,
-};
-
 export interface Snapshot {
   state: EngineState;
   settings: Settings;
@@ -109,6 +93,7 @@ export const api = {
   setupVirtualCamera: () => invoke("setup_virtual_camera"),
   removeVirtualCamera: () => invoke("remove_virtual_camera"),
   updateSettings: (settings: Settings) => invoke("update_settings", { settings }),
+  resetAll: () => invoke("reset_all"),
 };
 
 export function subscribePreview(onFrame: (jpeg: ArrayBuffer) => void) {

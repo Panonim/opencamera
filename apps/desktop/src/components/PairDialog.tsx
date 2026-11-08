@@ -30,8 +30,7 @@ export function usePairing(active: boolean) {
 
   useEffect(() => {
     if (!pairing?.url) return;
-    // Draws the code dark on white so every phone can scan it.
-    void QRCode.toString(pairing.url, { type: "svg", margin: 0, errorCorrectionLevel: "M", color: { dark: "#18181b", light: "#ffffff" } }).then(setQr);
+    void QRCode.toString(pairing.url, { type: "svg", margin: 0, errorCorrectionLevel: "M", color: { light: "#0000" } }).then(setQr);
   }, [pairing?.url]);
 
   useEffect(() => {
@@ -51,8 +50,9 @@ export function usePairing(active: boolean) {
 export function PairQr({ qr, remaining, ready, className }: { qr: string | null; remaining: number; ready: boolean; className?: string }) {
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className={cn("flex size-[220px] items-center justify-center rounded-lg border bg-white p-4", className)}>
-        {qr ? <img alt={t("pair.qrAlt")} className="size-full" src={`data:image/svg+xml;charset=utf-8,${encodeURIComponent(qr)}`} /> : <Skeleton className="size-full" />}
+      <div className={cn("flex size-[220px] items-center justify-center p-4", className)}>
+        {/* Inlined because an img can't inherit the theme's text color. */}
+        {qr ? <div role="img" aria-label={t("pair.qrAlt")} className="size-full [&_path]:stroke-foreground [&>svg]:block [&>svg]:size-full" dangerouslySetInnerHTML={{ __html: qr }} /> : <Skeleton className="size-full" />}
       </div>
       <span className="text-xs tabular-nums text-muted-foreground">{ready ? t("pair.newCodeIn", { time: formatCountdown(remaining) }) : t("pair.creatingCode")}</span>
     </div>
@@ -61,7 +61,7 @@ export function PairQr({ qr, remaining, ready, className }: { qr: string | null;
 
 export function PairError({ title, body }: { title: string; body: string }) {
   return (
-    <div className="rounded-md border border-danger/30 bg-danger/10 p-4 text-sm">
+    <div className="rounded-md bg-danger/10 p-4 text-sm">
       <div className="font-medium">{title}</div>
       <p className="mt-1 text-muted-foreground">{body}</p>
     </div>
@@ -109,7 +109,7 @@ export function PairDialog() {
                 <div className="flex items-center gap-1.5 font-medium">
                   {t("pair.warningTitle")} <ShieldAlert className="size-3.5 text-warning" />
                 </div>
-                <CertificateHelp className="mt-0.5" host={pairing ? new URL(pairing.url).hostname : undefined} />
+                <CertificateHelp className="mt-0.5" />
               </li>
               <li>
                 <div className="font-medium">{t("pair.startTitle")}</div>
@@ -129,7 +129,7 @@ export function PairDialog() {
           </div>
         )}
         {!err && now - openedAt > HINT_AFTER_MS && (
-          <div className="flex gap-3 rounded-md border bg-elevated p-3 text-xs leading-relaxed text-muted-foreground">
+          <div className="flex gap-3 rounded-md bg-elevated p-3 text-xs leading-relaxed text-muted-foreground">
             <Wifi className="mt-0.5 size-4 shrink-0" />
             <span>{t("pair.hint", { address: state?.server.address ?? t("pair.unknownAddress") })}</span>
           </div>

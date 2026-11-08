@@ -81,8 +81,6 @@
   },
   "certificate": {
     "intro": "It says “Your connection is not private” or “This Connection Is Not Private”. That's expected here.",
-    "android": "<b>Android Chrome:</b> tap Advanced › Proceed to {{host}} (unsafe)",
-    "iphone": "<b>iPhone Safari:</b> tap Show Details › visit this website",
     "why": "Why does this happen?",
     "reasons": {
       "https": "Phone browsers only allow camera access on secure (https) pages.",
@@ -183,17 +181,14 @@
     "batterySaver": "Turn on battery saver"
   },
   "update": {
-    "title": "Updates",
-    "label": "Software update",
-    "idle": "Check whether a newer version of OpenCamera is available.",
+    "label": "Updates",
     "checking": "Checking…",
-    "latest": "You're on the latest version.",
-    "available": "Version {{version}} is available.",
-    "downloading": "Downloading… The app restarts when done.",
-    "downloadingPercent": "Downloading {{percent}}%… The app restarts when done.",
-    "error": "Couldn't check for updates: {{message}}",
-    "install": "Install and restart",
-    "check": "Check for updates"
+    "latest": "Latest version installed",
+    "downloading": "Downloading…",
+    "downloadingPercent": "Downloading {{percent}}%…",
+    "install": "Update to {{version}}",
+    "check": "Check for updates",
+    "errorTitle": "Couldn't check for updates"
   },
   "virtualCamera": {
     "title": "Virtual camera",
@@ -312,15 +307,15 @@
   "about": {
     "description": "Turns your phone into a wireless webcam. Video goes directly from your phone's browser to this computer over your local network. There are no accounts, no analytics and no cloud servers, and nothing is recorded.",
     "reset": "Reset",
-    "resetLabel": "Reset everything to default",
-    "resetBody": "Restores every setting. Paired phones are kept.",
+    "resetLabel": "Reset all settings",
     "resetConfirm": "Click again to confirm",
     "diagnostics": "Diagnostics",
     "refresh": "Refresh",
     "copy": "Copy",
     "copied": "Copied",
     "diagnosticsBody": "Safe to share: contains no pairing codes, device secrets or video.",
-    "diagnosticsLive": "Developer mode is on, so detailed lines appear live."
+    "diagnosticsLive": "Developer mode is on, so detailed lines appear live.",
+    "resetError": "Couldn't reset"
   },
   "welcome": {
     "title": "Turn your phone into a webcam",
@@ -353,20 +348,15 @@
     "connectedPhone": "Connected to your phone",
     "allSet": "You're all set.",
     "connecting": "Connecting to your phone…",
-    "thisComputer": "this computer",
     "scanTitle": "Scan the code",
     "scanBody": "Open your phone's camera, point it at the code and tap the link.",
     "warningTitle": "Tap past the warning",
     "warningBody": "Your browser will say the page isn't private. That's expected.",
     "allowTitle": "Allow the camera",
     "allowBody": "Tap Allow when asked. Your video then shows up here.",
-    "showHow": "Show me how",
+    "whyWarning": "Why?",
     "expectedTitle": "That warning is expected",
-    "expectedBody": "OpenCamera runs on your own network with its own certificate, so phone browsers flag it. The video stays encrypted.",
-    "android": "Android",
-    "androidSteps": "Advanced › Proceed to {{host}}",
-    "iphone": "iPhone",
-    "iphoneSteps": "Show Details › visit this website"
+    "expectedBody": "OpenCamera runs on your own network with its own certificate, so phone browsers flag it. The video stays encrypted."
   },
   "tray": {
     "open": "Open OpenCamera",

@@ -4,10 +4,11 @@ import { t } from "@opencamera/i18n/desktop";
 import { Logo } from "@opencamera/ui/Logo";
 import { Check, Copy, RefreshCw } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Card, Page, PageHeader, SettingRow } from "../components/common";
+import { ActionRow, Card, Crossfade, Page, PageHeader } from "../components/common";
 import { LogView } from "../components/LogView";
-import { UpdateCard } from "../components/UpdateCard";
-import { api, DEFAULT_SETTINGS, onEngineLog, type Diagnostics } from "../lib/api";
+import { UpdateRow } from "../components/UpdateRow";
+import { api, onEngineLog, type Diagnostics } from "../lib/api";
+import { toast } from "../lib/toast";
 import { useApp } from "../store";
 
 const MAX_LIVE_LINES = 3000;
@@ -28,7 +29,7 @@ function diagnosticsText(d: Diagnostics) {
 
 export function About() {
   const version = useApp((s) => s.version);
-  const saveSettings = useApp((s) => s.saveSettings);
+  const resetAll = useApp((s) => s.resetAll);
   const [confirmReset, setConfirmReset] = useState(false);
   const [diag, setDiag] = useState<Diagnostics | null>(null);
   const [copied, setCopied] = useState(false);
@@ -47,7 +48,7 @@ export function About() {
       <div className="flex flex-col gap-5">
         <Card>
           <div className="flex items-start gap-4">
-            <div className="flex size-12 shrink-0 items-center justify-center rounded-lg border bg-elevated">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-elevated">
               <Logo className="size-7" />
             </div>
             <div>
@@ -56,25 +57,24 @@ export function About() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t("about.description")}</p>
             </div>
           </div>
-        </Card>
-
-        <UpdateCard />
-
-        <Card title={t("about.reset")}>
-          <SettingRow label={t("about.resetLabel")} description={t("about.resetBody")}>
-            <Button
-              size="sm"
-              variant={confirmReset ? "destructive" : "outline"}
-              onBlur={() => setConfirmReset(false)}
-              onClick={() => {
-                if (!confirmReset) return setConfirmReset(true);
-                void saveSettings(DEFAULT_SETTINGS);
-                setConfirmReset(false);
-              }}
-            >
-              {t(confirmReset ? "about.resetConfirm" : "about.reset")}
-            </Button>
-          </SettingRow>
+          <div className="mt-5 flex flex-col gap-3">
+            <UpdateRow />
+            <ActionRow label={t("about.resetLabel")}>
+              <Button
+                size="sm"
+                variant={confirmReset ? "destructive" : "outline"}
+                className="min-w-52 duration-200"
+                onBlur={() => setConfirmReset(false)}
+                onClick={() => {
+                  if (!confirmReset) return setConfirmReset(true);
+                  setConfirmReset(false);
+                  resetAll().catch((e) => toast("error", t("about.resetError"), String(e)));
+                }}
+              >
+                <Crossfade active={+confirmReset} labels={[t("about.reset"), t("about.resetConfirm")]} />
+              </Button>
+            </ActionRow>
+          </div>
         </Card>
 
         <Card

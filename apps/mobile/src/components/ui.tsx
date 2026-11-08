@@ -18,7 +18,7 @@ export function Hero({ icon, title, children }: { icon: ReactNode; title: string
     <div className="flex flex-col items-center text-center">
       <div className={`relative mb-7 ${RISE}`}>
         <div className="absolute -inset-5 rounded-full bg-primary/20 blur-2xl" />
-        <div className="relative flex size-20 items-center justify-center rounded-3xl border bg-card shadow-lg">{icon}</div>
+        <div className="relative flex size-20 items-center justify-center rounded-3xl bg-card shadow-lg">{icon}</div>
       </div>
       <h1 className={`text-2xl font-semibold tracking-tight text-balance ${RISE} delay-75`}>{title}</h1>
       <p className={`mt-3 max-w-xs text-[15px] leading-relaxed text-balance text-muted-foreground ${RISE} delay-150`}>{children}</p>

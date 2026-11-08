@@ -16,6 +16,7 @@ interface AppStore {
   setPage: (page: Page) => void;
   setPairOpen: (open: boolean) => void;
   saveSettings: (patch: Partial<Settings>) => Promise<void>;
+  resetAll: () => Promise<void>;
 }
 
 export const useApp = create<AppStore>((set, get) => ({
@@ -41,6 +42,11 @@ export const useApp = create<AppStore>((set, get) => ({
       set({ settings: previous });
       throw e;
     }
+  },
+  resetAll: async () => {
+    await api.resetAll();
+    const { settings, state } = await api.snapshot();
+    set({ settings, state, page: "dashboard" });
   },
 }));
 

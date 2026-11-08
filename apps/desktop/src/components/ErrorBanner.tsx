@@ -17,7 +17,7 @@ export function ErrorBanner() {
   };
 
   return (
-    <div role="alert" className="mb-5 flex items-start gap-3 rounded-lg border border-danger/30 bg-danger/10 p-4">
+    <div role="alert" className="mb-5 flex items-start gap-3 rounded-lg bg-danger/10 p-4">
       <TriangleAlert className="mt-0.5 size-4 shrink-0 text-danger" />
       <div className="min-w-0 flex-1">
         <div className="text-sm font-medium">{info.title}</div>

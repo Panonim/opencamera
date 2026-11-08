@@ -6,6 +6,7 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import { PairDialog } from "./components/PairDialog";
 import { Sidebar } from "./components/Sidebar";
 import { TitleBar } from "./components/TitleBar";
+import { Toaster } from "./components/Toaster";
 import { Skeleton } from "./components/ui/skeleton";
 import { TooltipProvider } from "./components/ui/tooltip";
 import { About } from "./pages/About";
@@ -79,6 +80,7 @@ export function App() {
         )}
       </div>
       <PairDialog />
+      <Toaster />
     </TooltipProvider>
   );
 }

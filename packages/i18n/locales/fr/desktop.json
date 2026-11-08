@@ -81,8 +81,6 @@
   },
   "certificate": {
     "intro": "Il est indiqué « Votre connexion n'est pas privée » ou « Cette connexion n'est pas privée ». C'est normal ici.",
-    "android": "<b>Chrome sur Android :</b> appuyez sur Paramètres avancés › Continuer vers {{host}} (dangereux)",
-    "iphone": "<b>Safari sur iPhone :</b> appuyez sur Afficher les détails › consulter ce site web",
     "why": "Pourquoi ce message ?",
     "reasons": {
       "https": "Les navigateurs des téléphones n'autorisent l'accès à la caméra que sur les pages sécurisées (https).",
@@ -183,17 +181,14 @@
     "batterySaver": "Activer l'économiseur de batterie"
   },
   "update": {
-    "title": "Mises à jour",
-    "label": "Mise à jour du logiciel",
-    "idle": "Vérifiez si une version plus récente d'OpenCamera est disponible.",
+    "label": "Mises à jour",
     "checking": "Vérification…",
-    "latest": "Vous utilisez la dernière version.",
-    "available": "La version {{version}} est disponible.",
-    "downloading": "Téléchargement… L'application redémarre une fois terminé.",
-    "downloadingPercent": "Téléchargement {{percent}} %… L'application redémarre une fois terminé.",
-    "error": "Impossible de vérifier les mises à jour : {{message}}",
-    "install": "Installer et redémarrer",
-    "check": "Rechercher des mises à jour"
+    "latest": "Dernière version installée",
+    "downloading": "Téléchargement…",
+    "downloadingPercent": "Téléchargement {{percent}} %…",
+    "install": "Mettre à jour vers {{version}}",
+    "check": "Rechercher des mises à jour",
+    "errorTitle": "Impossible de vérifier les mises à jour"
   },
   "virtualCamera": {
     "title": "Caméra virtuelle",
@@ -312,15 +307,15 @@
   "about": {
     "description": "Transforme votre téléphone en webcam sans fil. La vidéo va directement du navigateur de votre téléphone à cet ordinateur via votre réseau local. Pas de compte, pas d'analyse, pas de serveur cloud, et rien n'est enregistré.",
     "reset": "Réinitialiser",
-    "resetLabel": "Tout réinitialiser par défaut",
-    "resetBody": "Restaure tous les paramètres. Les téléphones appairés sont conservés.",
+    "resetLabel": "Réinitialiser tous les paramètres",
     "resetConfirm": "Cliquez à nouveau pour confirmer",
     "diagnostics": "Diagnostics",
     "refresh": "Actualiser",
     "copy": "Copier",
     "copied": "Copié",
     "diagnosticsBody": "Sans risque à partager : ne contient ni code d'appairage, ni secret d'appareil, ni vidéo.",
-    "diagnosticsLive": "Le mode développeur est activé, les lignes détaillées s'affichent donc en direct."
+    "diagnosticsLive": "Le mode développeur est activé, les lignes détaillées s'affichent donc en direct.",
+    "resetError": "Impossible de réinitialiser"
   },
   "welcome": {
     "title": "Transformez votre téléphone en webcam",
@@ -353,20 +348,15 @@
     "connectedPhone": "Connecté à votre téléphone",
     "allSet": "Tout est prêt.",
     "connecting": "Connexion à votre téléphone…",
-    "thisComputer": "cet ordinateur",
     "scanTitle": "Scannez le code",
     "scanBody": "Ouvrez l'appareil photo de votre téléphone, pointez-le vers le code et appuyez sur le lien.",
     "warningTitle": "Passez l'avertissement",
     "warningBody": "Votre navigateur indiquera que la page n'est pas privée. C'est normal.",
     "allowTitle": "Autorisez la caméra",
     "allowBody": "Appuyez sur Autoriser quand c'est demandé. Votre vidéo s'affiche ensuite ici.",
-    "showHow": "Montrez-moi comment",
+    "whyWarning": "Pourquoi ?",
     "expectedTitle": "Cet avertissement est normal",
-    "expectedBody": "OpenCamera fonctionne sur votre propre réseau avec son propre certificat, ce que les navigateurs des téléphones signalent. La vidéo reste chiffrée.",
-    "android": "Android",
-    "androidSteps": "Paramètres avancés › Continuer vers {{host}}",
-    "iphone": "iPhone",
-    "iphoneSteps": "Afficher les détails › consulter ce site web"
+    "expectedBody": "OpenCamera fonctionne sur votre propre réseau avec son propre certificat, ce que les navigateurs des téléphones signalent. La vidéo reste chiffrée."
   },
   "tray": {
     "open": "Ouvrir OpenCamera",

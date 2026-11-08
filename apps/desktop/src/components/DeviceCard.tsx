@@ -32,7 +32,7 @@ export function DeviceCard() {
       {device ? (
         <>
           <div className="flex items-center gap-3">
-            <div className="flex size-9 shrink-0 items-center justify-center rounded-md border bg-elevated">
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-md bg-elevated">
               <Smartphone className="size-4" />
             </div>
             <div className="min-w-0">

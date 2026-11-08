@@ -65,7 +65,7 @@ export function SettingsSheet({ onClose }: { onClose: () => void }) {
         role="dialog"
         aria-label={t("settings.title")}
         onClick={(e) => e.stopPropagation()}
-        className="flex max-h-[85%] w-full max-w-lg flex-col gap-5 overflow-y-auto rounded-t-3xl border-x border-t bg-card px-safe pt-2 pb-safe text-foreground shadow-2xl duration-300 ease-out animate-in slide-in-from-bottom motion-reduce:animate-none"
+        className="flex max-h-[85%] w-full max-w-lg flex-col gap-5 overflow-y-auto rounded-t-3xl bg-card px-safe pt-2 pb-safe text-foreground shadow-2xl duration-300 ease-out animate-in slide-in-from-bottom motion-reduce:animate-none"
       >
         <div aria-hidden className="mx-auto h-1 w-10 shrink-0 rounded-full bg-muted-foreground/40" />
         <div className="-mt-2 flex items-center justify-between">

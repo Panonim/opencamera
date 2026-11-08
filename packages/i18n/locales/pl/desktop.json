@@ -81,8 +81,6 @@
   },
   "certificate": {
     "intro": "Wyświetla się komunikat „Połączenie nie jest prywatne” lub „To połączenie nie jest prywatne”. To normalne.",
-    "android": "<b>Chrome na Androidzie:</b> dotknij Zaawansowane › Przejdź do {{host}} (niezabezpieczone)",
-    "iphone": "<b>Safari na iPhonie:</b> dotknij Pokaż szczegóły › odwiedź tę witrynę",
     "why": "Dlaczego tak się dzieje?",
     "reasons": {
       "https": "Przeglądarki w telefonach zezwalają na dostęp do kamery tylko na bezpiecznych stronach (https).",
@@ -183,17 +181,14 @@
     "batterySaver": "Włącz oszczędzanie baterii"
   },
   "update": {
-    "title": "Aktualizacje",
-    "label": "Aktualizacja oprogramowania",
-    "idle": "Sprawdź, czy dostępna jest nowsza wersja OpenCamera.",
+    "label": "Aktualizacje",
     "checking": "Sprawdzanie…",
-    "latest": "Masz najnowszą wersję.",
-    "available": "Dostępna jest wersja {{version}}.",
-    "downloading": "Pobieranie… Aplikacja uruchomi się ponownie po zakończeniu.",
-    "downloadingPercent": "Pobieranie {{percent}}%… Aplikacja uruchomi się ponownie po zakończeniu.",
-    "error": "Nie udało się sprawdzić aktualizacji: {{message}}",
-    "install": "Zainstaluj i uruchom ponownie",
-    "check": "Sprawdź aktualizacje"
+    "latest": "Zainstalowano najnowszą wersję",
+    "downloading": "Pobieranie…",
+    "downloadingPercent": "Pobieranie {{percent}}%…",
+    "install": "Zaktualizuj do {{version}}",
+    "check": "Sprawdź aktualizacje",
+    "errorTitle": "Nie udało się sprawdzić aktualizacji"
   },
   "virtualCamera": {
     "title": "Kamera wirtualna",
@@ -312,15 +307,15 @@
   "about": {
     "description": "Zamienia telefon w bezprzewodową kamerę internetową. Wideo trafia bezpośrednio z przeglądarki telefonu do tego komputera przez sieć lokalną. Bez kont, bez analityki i bez serwerów w chmurze, a nic nie jest nagrywane.",
     "reset": "Resetuj",
-    "resetLabel": "Przywróć wszystko do domyślnych",
-    "resetBody": "Przywraca wszystkie ustawienia. Sparowane telefony zostają zachowane.",
+    "resetLabel": "Resetuj wszystkie ustawienia",
     "resetConfirm": "Kliknij ponownie, aby potwierdzić",
     "diagnostics": "Diagnostyka",
     "refresh": "Odśwież",
     "copy": "Kopiuj",
     "copied": "Skopiowano",
     "diagnosticsBody": "Bezpieczne do udostępnienia: nie zawiera kodów parowania, tajnych danych urządzeń ani wideo.",
-    "diagnosticsLive": "Tryb programisty jest włączony, więc szczegółowe wpisy pojawiają się na żywo."
+    "diagnosticsLive": "Tryb programisty jest włączony, więc szczegółowe wpisy pojawiają się na żywo.",
+    "resetError": "Nie udało się zresetować"
   },
   "welcome": {
     "title": "Zamień telefon w kamerę internetową",
@@ -353,20 +348,15 @@
     "connectedPhone": "Połączono z telefonem",
     "allSet": "Wszystko gotowe.",
     "connecting": "Łączenie z telefonem…",
-    "thisComputer": "tym komputerem",
     "scanTitle": "Zeskanuj kod",
     "scanBody": "Otwórz aparat w telefonie, skieruj go na kod i dotknij linku.",
     "warningTitle": "Przejdź dalej mimo ostrzeżenia",
     "warningBody": "Przeglądarka poinformuje, że strona nie jest prywatna. To normalne.",
     "allowTitle": "Zezwól na dostęp do kamery",
     "allowBody": "Dotknij Zezwól, gdy pojawi się prośba. Wideo pojawi się tutaj.",
-    "showHow": "Pokaż jak",
+    "whyWarning": "Dlaczego?",
     "expectedTitle": "To ostrzeżenie jest normalne",
-    "expectedBody": "OpenCamera działa w Twojej sieci z własnym certyfikatem, dlatego przeglądarki telefonów to oznaczają. Wideo pozostaje szyfrowane.",
-    "android": "Android",
-    "androidSteps": "Zaawansowane › Przejdź do {{host}}",
-    "iphone": "iPhone",
-    "iphoneSteps": "Pokaż szczegóły › odwiedź tę witrynę"
+    "expectedBody": "OpenCamera działa w Twojej sieci z własnym certyfikatem, dlatego przeglądarki telefonów to oznaczają. Wideo pozostaje szyfrowane."
   },
   "tray": {
     "open": "Otwórz OpenCamera",
